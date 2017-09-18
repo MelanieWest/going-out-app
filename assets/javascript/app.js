@@ -3,22 +3,26 @@ var zip = $("#zip-code").val()
 console.log(zip)
 $("#am").on("click", function(){
     var time = "a";
+    event.preventDefault();    
     // needs code to move to next question
     console.log(time)
 })
 $("#pm").on("click", function(){
     var time = "p";
+    event.preventDefault();    
     // needs code to move to next question
     console.log(time)
 })
 $("#rest").on("click", function(){
     var activity = "r"
+    event.preventDefault();    
     // needs code to move to result
     console.log(activity);
     ajax()
 })
 $("#act").on("click", function(){
     var activity = "activ"
+    event.preventDefault();    
     // needs code to movet to result
     console.log(activity);
     ajax()
