@@ -29,6 +29,7 @@ $.ajax({        // this request is listed first, but it logs second (after group
 });  // end of zip to city ajax request;
 
     tableDiv = $('<table>');
+    tableDiv.html('<tr><th> Activity </th><th> Location </th> </tr>');
 
     $.ajax({
         url: "https://partner-api.groupon.com/deals.json?tsToken=US_AFF_0_201236_212556_0&division_id=Orlando&filters=category:"+category+"&offset=0&limit=10",
@@ -39,11 +40,13 @@ $.ajax({        // this request is listed first, but it logs second (after group
         
         for (var i = 0; i < e.deals.length; i++){
             console.log("Activity number " + i+ " is " + e.deals[i].id);
-
+            tableDiv.append('<tr><td>'+ e.deals[i].title +'</td><td>'+ e.deals[i].redemptionLocation + '</td></tr>' )
          }      //end of for loop
-
-x        
+       
     });  //end of function
 
+    console.log('tableDiv = '+ tableDiv);
+
+    $("#display").append(tableDiv); //insert table into document
 
 })      //end of document ready
