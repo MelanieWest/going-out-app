@@ -19,7 +19,7 @@ $("#rest").on("click", function(){
 })
 $("#act").on("click", function(){
     var activity = "activ"
-    // needs code to movet to result
+    // needs code to move to result
     console.log(activity);
     ajax()
 })
