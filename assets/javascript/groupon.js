@@ -6,7 +6,7 @@ $(document).ready(function(){
 
 // 'activity' and 'zip' will be passed in;  for now they are not so I am setting default values
 
-var activity = 'r';
+var activity = 'activ';
 var zip = 32809;
 var tableDiv;
 
@@ -16,6 +16,8 @@ var category, city;
 
 if (activity == 'r'){category = 'food-and-drink';}
 if (activity == 'activ'){category = 'things-to-do';}
+if (activity == 'activ'){category = 'things-to-do';}
+
 
 var zipUrl = "https://www.zipcodeapi.com/rest/Kw7CrOFpJDGmp331IVUUOY7Pue98LjOwQW9hLPGutnQSqTT8PO3DMbshpCpbWeIM/info.json/" + zip + "/miles"
 
@@ -40,6 +42,11 @@ $.ajax({        // this request is listed first, but it logs second (after group
         
         for (var i = 0; i < e.deals.length; i++){
             console.log("Activity number " + i+ " is " + e.deals[i].id);
+            // e.deals[i].merchant.name     //merchant name
+            // e.deals[i].merchant.websiteUrl  //merchant website
+            // e.deals[i].mediumImageUrl        //groupon image
+            // e.deals[i].finePrint         //restrictions
+            
             tableDiv.append('<tr><td>'+ e.deals[i].title +'</td><td>'+ e.deals[i].redemptionLocation + '</td></tr>' )
          }      //end of for loop
        
