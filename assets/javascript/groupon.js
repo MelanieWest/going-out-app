@@ -36,9 +36,9 @@ $.ajax({
 
         console.log(e);
 
-        // for (var i = 0; i < e.deals.length; i++){
-        //     console.log("Activity number " + i+ " is " + e.deals[i].id);
-        // }
+        for (var i = 0; i < e.deals.length; i++){
+            console.log("Activity number " + i+ " is " + e.deals[i].id);
+        }
  
 
     });  //end of function
