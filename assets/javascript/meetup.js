@@ -16,6 +16,11 @@ $.ajax({
     method: "GET"
     }).done(function(responseMeetup) {
     console.log(responseMeetup);
+    $("#display").append(responseMeetup);
     });
 }); 
+
+ //insert table into document
+
 }); 
+
