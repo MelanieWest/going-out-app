@@ -1,10 +1,9 @@
 $(document).ready(function(){
 var zip = 32792;
-var eventZip = $("#zip-input").val();
 var zipUrl = "https://www.zipcodeapi.com/rest/Kw7CrOFpJDGmp331IVUUOY7Pue98LjOwQW9hLPGutnQSqTT8PO3DMbshpCpbWeIM/info.json/" + zip + "/degrees"
 
-
-// $("#new-button").on("click", function() {
+//on-click event wouldn't work when I used button id, but the click event does work when clicking on the form; just added this here for testing purposes
+$("form").on("click", function() {
 $.ajax({      
     url: zipUrl,
     method:  "GET"
@@ -28,8 +27,8 @@ $.ajax({
 }); 
 });
 });
- 
-// }); 
+});
+
 
 
 
