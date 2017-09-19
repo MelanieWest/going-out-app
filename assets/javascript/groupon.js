@@ -8,7 +8,7 @@ $(document).ready(function(){
 
 var activity = 'activ';
 var zip = 32809;
-var tableDiv, merchLink, merchUrl;
+var tableDiv, merchLink, merchUrl, groupLink;
 var itemSel=0;
 
 //these will be determined by input
@@ -49,25 +49,16 @@ $.ajax({        // this request is listed first, but it logs second (after group
 
     //for (var i = 0; i < e.deals.length; i++){
 
-        // groupon doesn't show addresses.  Instead, provide the merchant url in a link
-        
-        // merchLink = $('<a>', {
-        //     title:"groupon link",
- //           href: e.deals[itemSel].merchant.websiteUrl,
-            // href: e.deals[itemSel].dealUrl,
-            //text:  "merchant website"
-//        });
+        // groupon doesn't show addresses.  Instead, provide the groupon url in a link
 
- //       console.log(merchLink);
-        console.log(e.deals[itemSel].dealUrl);
+        merchLink = "groupon link";
+        groupLink = merchLink.link(e.deals[itemSel].dealUrl);
 
-        // e.deals[itemSel].merchant.name     //merchant name
-        // e.deals[itemSel].mediumImageUrl        //groupon image
-        // e.deals[itemSel].finePrint         //restrictions
-
- //        tableDiv.append('<tr><td>'+ e.deals[itemSel].title +'</td><td>'+ e.deals[itemSel].redemptionLocation + '</td><td>'+ merchLink + '</td></tr>' )
- //       tableDiv.append('<tr><th> Activity </th><td> '+ e.deals[itemSel].title +'</td></tr><tr><th> Link </th><td> '+ e.deals[itemSel].dealUrl + '</td></tr>')
-       tableDiv.append('<tr><th> Activity </th><td> '+ e.deals[itemSel].title +'</td></tr><tr><th> Price </th><td> '+ e.deals[itemSel].options[0].price.formattedAmount + '</td></tr>')
+ 
+        //this next line was for creating a table with multiple options listed
+  //        tableDiv.append('<tr><td>'+ e.deals[itemSel].title +'</td><td>'+ e.deals[itemSel].redemptionLocation + '</td><td>'+ merchLink + '</td></tr>' )
+ 
+       tableDiv.append('<tr><th> Activity </th><td> '+ e.deals[itemSel].title +'</td></tr><tr><th> Price </th><td> '+ e.deals[itemSel].options[0].price.formattedAmount + '</td></tr><tr><th> Link </th><td>' + groupLink + '</td></tr>')
 
 //}      //end of for loop
             return tableDiv;
