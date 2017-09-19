@@ -24,11 +24,13 @@ var zipUrl = "https://www.zipcodeapi.com/rest/Kw7CrOFpJDGmp331IVUUOY7Pue98LjOwQW
 
 $.ajax({        // this request is listed first, but it logs second (after groupon)
     url: zipUrl,
-    method:  "GET"
-}).done(function(response){
+    method:  "GET",
+    async: "false",
+}).done(function cityName(response){
     console.log(response);
     city = response.city;
-});  // end of zip to city ajax request;
+
+    console.log('city is '+city);
 
     //solve async problem by having the groupon ajax occur after zip is done
     tableDiv = $('<table>');
@@ -36,8 +38,7 @@ $.ajax({        // this request is listed first, but it logs second (after group
     //    tableDiv.html('<tr><th> Activity </th><th> Location </th><th> Link </th> </tr>');
     tableDiv.html('<tr><th> </th><th> Groupon </th></tr>');
 
-    city = 'Orlando';
-
+  
     $.ajax({
     url: "https://partner-api.groupon.com/deals.json?tsToken=US_AFF_0_201236_212556_0&division_id="+city+"&filters=category:"+category+"&offset=0&limit=10",
     method:  "GET"
@@ -63,10 +64,12 @@ $.ajax({        // this request is listed first, but it logs second (after group
 //}      //end of for loop
             return tableDiv;
             
-    });  //end of function
+    });  //end of groupon ajax request
 
+        $("#display").append(tableDiv); //insert table into document
+});  // end of zip to city ajax request
 
-
-    $("#display").append(tableDiv); //insert table into document
+   
+    
 
 })      //end of document ready
