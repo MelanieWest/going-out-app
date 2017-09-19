@@ -8,7 +8,8 @@ $(document).ready(function(){
 
 var activity = 'activ';
 var zip = 32809;
-var tableDiv;
+var tableDiv, merchLink;
+var merchUrl;
 
 //these will be determined by input
 
@@ -25,34 +26,39 @@ $.ajax({        // this request is listed first, but it logs second (after group
     url: zipUrl,
     method:  "GET"
 }).done(function(response){
-    console.log(response);
-    console.log(response.city);
     city = response.city;
 });  // end of zip to city ajax request;
 
-    tableDiv = $('<table>');
-    tableDiv.html('<tr><th> Activity </th><th> Location </th> </tr>');
+tableDiv = $('<table>');
+tableDiv.html('<tr><th> Activity </th><th> Location </th><th> Link </th> </tr>');
 
-    $.ajax({
-        url: "https://partner-api.groupon.com/deals.json?tsToken=US_AFF_0_201236_212556_0&division_id=Orlando&filters=category:"+category+"&offset=0&limit=10",
-        method:  "GET"
-    }).done(function(e){
+$.ajax({
+    url: "https://partner-api.groupon.com/deals.json?tsToken=US_AFF_0_201236_212556_0&division_id=Orlando&filters=category:"+category+"&offset=0&limit=10",
+    method:  "GET"
+}).done(function(e){
 
-        console.log(e);
+    console.log(e);
+    
+    for (var i = 0; i < e.deals.length; i++){
+
+        // groupon doesn't show addresses.  Instead, provide the merchant url in a link
         
-        for (var i = 0; i < e.deals.length; i++){
-            console.log("Activity number " + i+ " is " + e.deals[i].id);
-            // e.deals[i].merchant.name     //merchant name
-            // e.deals[i].merchant.websiteUrl  //merchant website
-            // e.deals[i].mediumImageUrl        //groupon image
-            // e.deals[i].finePrint         //restrictions
-            
-            tableDiv.append('<tr><td>'+ e.deals[i].title +'</td><td>'+ e.deals[i].redemptionLocation + '</td></tr>' )
-         }      //end of for loop
-       
-    });  //end of function
+        merchLink = $('<a>', {
+            name: "link",
+            href: e.deals[i].merchant.websiteUrl,
+            text: "merchant website"
+        });
+        
+        console.log(e.deals[i].merchant.websiteUrl);
 
-    console.log('tableDiv = '+ tableDiv);
+        // e.deals[i].merchant.name     //merchant name
+        // e.deals[i].mediumImageUrl        //groupon image
+        // e.deals[i].finePrint         //restrictions
+
+            tableDiv.append('<tr><td>'+ e.deals[i].title +'</td><td>'+ e.deals[i].redemptionLocation + '</td><td>'+ merchLink + '</td></tr>' )
+        }      //end of for loop
+    
+});  //end of function
 
     $("#display").append(tableDiv); //insert table into document
 
