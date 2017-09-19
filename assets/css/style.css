@@ -2,3 +2,11 @@ h1 {
     color: red;
     font-size: 36px;
 }
+
+#user-time {
+    display: none;
+}
+
+#user-activity {
+    display: none;
+}
