@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 
-var queryUrl = "https://api.meetup.com/2/open-events?zip=32792&key=2fb727dc2e2c2b62374217f5d45a&sign=true&photo-host=public&page=10"
+var queryUrl = "https://api.meetup.com/find/events?&only=name,time,venue&key=2fb727dc2e2c2b62374217f5d45a&sign=true&photo-host=public"
 $.ajax({
 url: queryUrl,
 method: "GET"
