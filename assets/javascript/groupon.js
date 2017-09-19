@@ -8,8 +8,8 @@ $(document).ready(function(){
 
 var activity = 'activ';
 var zip = 32809;
-var tableDiv, merchLink;
-var merchUrl;
+var tableDiv, merchLink, merchUrl;
+var itemSel=0;
 
 //these will be determined by input
 
@@ -28,10 +28,15 @@ $.ajax({        // this request is listed first, but it logs second (after group
 }).done(function(response){
     console.log(response);
     city = response.city;
+});  // end of zip to city ajax request;
 
     //solve async problem by having the groupon ajax occur after zip is done
     tableDiv = $('<table>');
-    tableDiv.html('<tr><th> Activity </th><th> Location </th><th> Link </th> </tr>');
+
+    //    tableDiv.html('<tr><th> Activity </th><th> Location </th><th> Link </th> </tr>');
+    tableDiv.html('<tr><th> </th><th> Groupon </th></tr>');
+
+    city = 'Orlando';
 
     $.ajax({
     url: "https://partner-api.groupon.com/deals.json?tsToken=US_AFF_0_201236_212556_0&division_id="+city+"&filters=category:"+category+"&offset=0&limit=10",
@@ -40,29 +45,36 @@ $.ajax({        // this request is listed first, but it logs second (after group
 
     console.log(e);
 
-    for (var i = 0; i < e.deals.length; i++){
+    itemSel = Math.floor(Math.random()*10);
+
+    //for (var i = 0; i < e.deals.length; i++){
 
         // groupon doesn't show addresses.  Instead, provide the merchant url in a link
         
-        merchLink = $('<a>', {
-            name: "link",
-            href: e.deals[i].merchant.websiteUrl,
-            text: "merchant website"
-        });
-        
-        console.log(e.deals[i].merchant.websiteUrl);
+        // merchLink = $('<a>', {
+        //     title:"groupon link",
+ //           href: e.deals[itemSel].merchant.websiteUrl,
+            // href: e.deals[itemSel].dealUrl,
+            //text:  "merchant website"
+//        });
 
-        // e.deals[i].merchant.name     //merchant name
-        // e.deals[i].mediumImageUrl        //groupon image
-        // e.deals[i].finePrint         //restrictions
+ //       console.log(merchLink);
+        console.log(e.deals[itemSel].dealUrl);
 
-            tableDiv.append('<tr><td>'+ e.deals[i].title +'</td><td>'+ e.deals[i].redemptionLocation + '</td><td>'+ merchLink + '</td></tr>' )
-        }      //end of for loop
+        // e.deals[itemSel].merchant.name     //merchant name
+        // e.deals[itemSel].mediumImageUrl        //groupon image
+        // e.deals[itemSel].finePrint         //restrictions
+
+ //        tableDiv.append('<tr><td>'+ e.deals[itemSel].title +'</td><td>'+ e.deals[itemSel].redemptionLocation + '</td><td>'+ merchLink + '</td></tr>' )
+ //       tableDiv.append('<tr><th> Activity </th><td> '+ e.deals[itemSel].title +'</td></tr><tr><th> Link </th><td> '+ e.deals[itemSel].dealUrl + '</td></tr>')
+       tableDiv.append('<tr><th> Activity </th><td> '+ e.deals[itemSel].title +'</td></tr><tr><th> Price </th><td> '+ e.deals[itemSel].options[0].price.formattedAmount + '</td></tr>')
+
+//}      //end of for loop
             return tableDiv;
             
     });  //end of function
 
-    });  // end of zip to city ajax request;
+
 
     $("#display").append(tableDiv); //insert table into document
 
