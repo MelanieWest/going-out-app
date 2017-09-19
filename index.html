@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Activity App</title>
     <link rel = "stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel = "stylesheet" type="text/css" href="assets/css/style.css">    
 </head>
@@ -14,18 +14,29 @@
     <!--Add input form-->
     <div id="display">
         
-        <form id="user-questions">
+        <form id="am">
             <label for="zip-input"><p>Enter your zip code</p></label>
             <input type="text" id="zip-input"><br>
-            <input id="am" type="submit" value="Enter">
+            <input id="zip-code" type="submit" value="Enter">
         </form>
 
+        <form id="user-time">
+            <label for="zip-input"><p>What time do you want to go out?</p></label>
+            <input id="am" type="submit" value="Morning">
+            <input id="pm" type="submit" value="Evening">            
+        </form>
+
+        <form id="user-activity">
+            <label for="zip-input"><p>What do you want to do?</p></label>
+            <input id="rest" type="submit" value="Restaurant">
+            <input id="act" type="submit" value="Activity">
+        </form>
     </div>
 </body>
 </html>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="assets/javascript/app.js" ></script>
+<!--<script src="assets/javascript/app.js" ></script>-->
 <script src="assets/javascript/groupon.js" ></script>
 <script src="assets/javascript/meetup.js" ></script>
 <script src="assets/javascript/output.js" ></script>
