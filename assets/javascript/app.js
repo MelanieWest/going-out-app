@@ -1,18 +1,14 @@
+var time;
+var zip;
+
 $(document).ready(function(){
+
     $("#zip-button").on("click", function(){
-        var zip = $("#zip-input").val()        
-        var time = "a";
+        zip = $("#zip-input").val()        
         event.preventDefault();  
         console.log("Zip code: " + zip);
         $("#user-zip").css("display", "none");                
-        $("#user-time").css("display", "block");
-        // needs code to move to next question
-        console.log(time)
-    })
-
-    $("#pm").on("click", function(){
-        var time = "p";
-        event.preventDefault();    
+        $("#user-activity").css("display", "block");
         // needs code to move to next question
         console.log(time)
     })
@@ -20,17 +16,28 @@ $(document).ready(function(){
     $("#rest").on("click", function(){
         var activity = "r"
         event.preventDefault();    
-        $("#user-zip").css("display", "none");                
-        $("#user-time").css("display", "block");
+        $("#user-activity").css("display", "none");                
+        $("#display").html("<h2>Your result is ");
         console.log(activity);
-        ajax()
+        ajax();
     })
+
     $("#act").on("click", function(){
-        var activity = "activ"
-        $("#user-zip").css("display", "none");                
-        $("#user-time").css("display", "block");
+        var activity = "r"
+        event.preventDefault();    
+        $("#user-activity").css("display", "none");                
+        $("#display").html("<h2>Your result is ");
         console.log(activity);
-        ajax()
+        ajax();
+    })
+
+    $("#meet").on("click", function(){
+        var activity = "r"
+        event.preventDefault();    
+        $("#user-activity").css("display", "none");                
+        $("#display").html("<h2>Your result is ");
+        console.log(activity);
+        ajax();
     })
 
     function ajax (){

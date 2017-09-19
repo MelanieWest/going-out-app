@@ -15,6 +15,7 @@
     <div id="display">
     
         <!--User Enters Zip Code Here-->
+
         <form id="user-zip">
             <label for="zip-input"><p>Enter your zip code</p></label>
             <input type="text" id="zip-input"><br>
@@ -24,10 +25,25 @@
         <!--User Selects Activity Here-->
 
         <form id="user-activity">
-            <label for="zip-input"><p>What do you want to do?</p></label>
+            <label for="rest"><p>What do you want to do?</p></label>
+            <input id="rest" type="submit" value="Restaurant">
+            <input id="act" type="submit" value="Activity">
+            <input id="meet" type="submit" value="MeetUp">            
+        </form>
+
+        <form id="user-activity">
+            <label for="rest"><p>Sweet. What exactly are you looking for?</p></label>
             <input id="rest" type="submit" value="Restaurant">
             <input id="act" type="submit" value="Activity">
         </form>
+         <!--User Selects Time Here : REMOVED UNLESS TIME VARIABLE USED LATER
+
+        <form id="user-time">
+            <label for="zip-input"><p>What time do you want to go out?</p></label>
+            <input id="am" type="submit" value="Morning">
+            <input id="pm" type="submit" value="Evening">            
+        </form>
+        -->
     </div>
 </body>
 </html>
