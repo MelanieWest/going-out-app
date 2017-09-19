@@ -3,9 +3,11 @@
 $(document).ready(function(){
     var zip = $("#zip-code").val()
     console.log(zip)
-    $("#am").on("click", function(){
+    $("#zip-button").on("click", function(){
         var time = "a";
         event.preventDefault();    
+        $("#user-zip").css("display", "none");                
+        $("#user-time").css("display", "block");
         // needs code to move to next question
         console.log(time)
     })
