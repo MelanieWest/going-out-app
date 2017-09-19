@@ -7,10 +7,6 @@ h2 {
     font-size: 30px;
 }
 
-#user-time {
-    display: none;
-}
-
-#user-activity {
+#user-time, #user-activity, #user-category {
     display: none;
 }
