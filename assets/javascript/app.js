@@ -1,5 +1,3 @@
-
-
 $(document).ready(function(){
     $("#zip-button").on("click", function(){
         var zip = $("#zip-input").val()        
@@ -11,26 +9,30 @@ $(document).ready(function(){
         // needs code to move to next question
         console.log(time)
     })
+
     $("#pm").on("click", function(){
         var time = "p";
         event.preventDefault();    
         // needs code to move to next question
         console.log(time)
     })
+
     $("#rest").on("click", function(){
         var activity = "r"
         event.preventDefault();    
-        // needs code to move to result
+        $("#user-zip").css("display", "none");                
+        $("#user-time").css("display", "block");
         console.log(activity);
         ajax()
     })
     $("#act").on("click", function(){
         var activity = "activ"
-        // needs code to move to result
+        $("#user-zip").css("display", "none");                
+        $("#user-time").css("display", "block");
         console.log(activity);
         ajax()
     })
-    
+
     function ajax (){
     if (time == "a" && activity == "r") {
         //ajax request for morning restaraunt 
