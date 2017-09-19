@@ -1,3 +1,5 @@
+
+
 $(document).ready(function(){
     var zip = $("#zip-code").val()
     console.log(zip)
