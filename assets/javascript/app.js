@@ -34,10 +34,12 @@ $(document).ready(function(){
         var activity = "r"
         event.preventDefault();    
         $("#user-activity").css("display", "none");                
-        $("#display").html("<h2>Your result is ");
+        $("#user-category").css("display", "block");
         console.log(activity);
         ajax();
     })
+
+
 
     function ajax (){
     if (time == "a" && activity == "r") {
