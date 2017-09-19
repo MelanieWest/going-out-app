@@ -5,7 +5,7 @@ $(document).ready(function(){
 // time is 'a' (am or morning) or 'p' (pm or evening)
 
 // 'activity' and 'zip' will be passed in;  for now they are not so I am setting default values
-
+ 
 var activity = 'activ';
 var zip = 32809;
 var tableDiv, merchLink, merchUrl, groupLink;
@@ -17,10 +17,12 @@ var category, city;
 
 if (activity == 'r'){category = 'food-and-drink';}
 if (activity == 'activ'){category = 'things-to-do';}
-if (activity == 'activ'){category = 'things-to-do';}
+if (activity == 'health'){category = 'beauty-and-spas';}
 
 
 var zipUrl = "https://www.zipcodeapi.com/rest/Kw7CrOFpJDGmp331IVUUOY7Pue98LjOwQW9hLPGutnQSqTT8PO3DMbshpCpbWeIM/info.json/" + zip + "/degrees"
+
+//zip code request is limited to 50 calls/day.  Hard code 'city' to avoid errors
 
 $.ajax({        // this request is listed first, but it logs second (after groupon)
     url: zipUrl,
@@ -30,6 +32,7 @@ $.ajax({        // this request is listed first, but it logs second (after group
     console.log(response);
     city = response.city;
 
+    //city = 'Orlando'
     console.log('city is '+city);
 
     //solve async problem by having the groupon ajax occur after zip is done
@@ -40,13 +43,14 @@ $.ajax({        // this request is listed first, but it logs second (after group
 
   
     $.ajax({
-    url: "https://partner-api.groupon.com/deals.json?tsToken=US_AFF_0_201236_212556_0&division_id="+city+"&filters=category:"+category+"&offset=0&limit=10",
-    method:  "GET"
+    url: "https://partner-api.groupon.com/deals.json?tsToken=US_AFF_0_201236_212556_0&division_id="+city+"&filters=category:"+category+"&offset=0&limit=50",
+    method:  "GET" 
     }).done(function(e){
 
     console.log(e);
 
-    itemSel = Math.floor(Math.random()*10);
+
+    itemSel = Math.floor(Math.random()*50);
 
     //for (var i = 0; i < e.deals.length; i++){
 
@@ -67,7 +71,7 @@ $.ajax({        // this request is listed first, but it logs second (after group
     });  //end of groupon ajax request
 
         $("#display").append(tableDiv); //insert table into document
-});  // end of zip to city ajax request
+//});  // end of zip to city ajax request
 
    
     
