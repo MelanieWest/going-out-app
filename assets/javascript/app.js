@@ -1,33 +1,44 @@
-
+var time;
+var zip;
 
 $(document).ready(function(){
-    var zip = $("#zip-code").val()
-    console.log(zip)
-    $("#am").on("click", function(){
-        var time = "a";
-        event.preventDefault();    
-        // needs code to move to next question
+
+    $("#zip-button").on("click", function(){
+        zip = $("#zip-input").val()        
+        event.preventDefault();  
+        console.log("Zip code: " + zip);
+        $("#user-zip").css("display", "none");                
+        $("#user-activity").css("display", "block");
         console.log(time)
     })
-    $("#pm").on("click", function(){
-        var time = "p";
-        event.preventDefault();    
-        // needs code to move to next question
-        console.log(time)
-    })
+
     $("#rest").on("click", function(){
         var activity = "r"
         event.preventDefault();    
-        // needs code to move to result
+        $("#user-activity").css("display", "none");                
+        $("#display").html("<h2>Your result is ");
         console.log(activity);
-        ajax()
+        ajax();
     })
+
     $("#act").on("click", function(){
-        var activity = "activ"
-        // needs code to move to result
+        var activity = "r"
+        event.preventDefault();    
+        $("#user-activity").css("display", "none");                
+        $("#display").html("<h2>Your result is ");
         console.log(activity);
-        ajax()
+        ajax();
     })
+
+    $("#meet").on("click", function(){
+        var activity = "r"
+        event.preventDefault();    
+        $("#user-activity").css("display", "none");                
+        $("#display").html("<h2>Your result is ");
+        console.log(activity);
+        ajax();
+    })
+
     function ajax (){
     if (time == "a" && activity == "r") {
         //ajax request for morning restaraunt 
