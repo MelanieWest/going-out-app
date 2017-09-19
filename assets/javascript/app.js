@@ -9,7 +9,6 @@ $(document).ready(function(){
         console.log("Zip code: " + zip);
         $("#user-zip").css("display", "none");                
         $("#user-activity").css("display", "block");
-        // needs code to move to next question
         console.log(time)
     })
 
