@@ -1,11 +1,11 @@
 
 
 $(document).ready(function(){
-    var zip = $("#zip-code").val()
-    console.log(zip)
     $("#zip-button").on("click", function(){
+        var zip = $("#zip-input").val()        
         var time = "a";
-        event.preventDefault();    
+        event.preventDefault();  
+        console.log("Zip code: " + zip);
         $("#user-zip").css("display", "none");                
         $("#user-time").css("display", "block");
         // needs code to move to next question
@@ -30,6 +30,7 @@ $(document).ready(function(){
         console.log(activity);
         ajax()
     })
+    
     function ajax (){
     if (time == "a" && activity == "r") {
         //ajax request for morning restaraunt 
