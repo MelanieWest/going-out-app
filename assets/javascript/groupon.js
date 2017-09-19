@@ -58,7 +58,8 @@ $.ajax({        // this request is listed first, but it logs second (after group
 
             tableDiv.append('<tr><td>'+ e.deals[i].title +'</td><td>'+ e.deals[i].redemptionLocation + '</td><td>'+ merchLink + '</td></tr>' )
         }      //end of for loop
-
+            return tableDiv;
+            
     });  //end of function
 
     });  // end of zip to city ajax request;
