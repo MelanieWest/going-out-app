@@ -12,16 +12,16 @@ $("#pm").on("click", function(){
     console.log(time)
 })
 $("#rest").on("click", function(){
-    var activity = "r"
+    var activity = "r";
     // needs code to move to result
     console.log(activity);
-    ajax()
+    ajax();
 })
 $("#act").on("click", function(){
-    var activity = "activ"
+    var activity = "activ";
     // needs code to movet to result
     console.log(activity);
-    ajax()
+    ajax();
 })
 function ajax (){
 if (time == "a" && activity == "r") {
