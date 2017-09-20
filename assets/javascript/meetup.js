@@ -139,7 +139,7 @@ $.ajax({
         console.log(response);
         var lat = response.lat
         var lng = response.lng
-        var queryUrl = "https://cors-bcs.herokuapp.com/api.meetup.com/find/groups?&category=11&key=2fb727dc2e2c2b62374217f5d45a&sign=true&photo-host=public&lon=" + lng + "&lat=" + lat + "&page=50"
+        var queryUrl = "https://cors-bcs.herokuapp.com/https://api.meetup.com/find/groups?&category=11&key=2fb727dc2e2c2b62374217f5d45a&sign=true&photo-host=public&lon=" + lng + "&lat=" + lat + "&page=50"
             $.ajax({
             url: queryUrl,
             method: "GET"
