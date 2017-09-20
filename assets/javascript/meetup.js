@@ -1,7 +1,7 @@
 function meetup () {
 //ajax call for zip code (please note this is hard-coded with a var zip value for testing purposes and this value will have to be removed)  
 //var zip = 32792;
-var zipUrl = "https://cors-bcs.herokuapp.com/www.zipcodeapi.com/rest/AbzyNhMMyqYW0scurt7Al2yYktdJlnFWyfvmxh96H72HAfc1JkC4ma2HEgr0D6Wc/info.json/" + zip + "/degrees"
+var zipUrl = "https://cors-bcs.herokuapp.com/https://www.zipcodeapi.com/rest/AbzyNhMMyqYW0scurt7Al2yYktdJlnFWyfvmxh96H72HAfc1JkC4ma2HEgr0D6Wc/info.json/" + zip + "/degrees"
 
 //two ajax calls - first to call the zipcode, and then to call Meetup results based on zipcode. Each call is separated by category.
 
@@ -14,7 +14,7 @@ $.ajax({
     console.log(response);
     var lat = response.lat
     var lng = response.lng
-    var queryUrl = "https://cors-bcs.herokuapp.com/api.meetup.com/find/groups?&category=23&key=2fb727dc2e2c2b62374217f5d45a&sign=true&photo-host=public&lon=" + lng + "&lat=" + lat + "&page=3"
+    var queryUrl = "https://cors-bcs.herokuapp.com/https://api.meetup.com/find/groups?&category=23&key=2fb727dc2e2c2b62374217f5d45a&sign=true&photo-host=public&lon=" + lng + "&lat=" + lat + "&page=3"
         $.ajax({
         url: queryUrl,
         method: "GET"
@@ -55,7 +55,7 @@ $.ajax({
         console.log(response);
         var lat = response.lat
         var lng = response.lng
-        var queryUrl = "https://cors-bcs.herokuapp.com/api.meetup.com/find/groups?&category=32&key=2fb727dc2e2c2b62374217f5d45a&sign=true&photo-host=public&lon=" + lng + "&lat=" + lat + "&page=50"
+        var queryUrl = "https://cors-bcs.herokuapp.com/https://api.meetup.com/find/groups?&category=32&key=2fb727dc2e2c2b62374217f5d45a&sign=true&photo-host=public&lon=" + lng + "&lat=" + lat + "&page=50"
             $.ajax({
             url: queryUrl,
             method: "GET"
@@ -96,7 +96,7 @@ $.ajax({
         var lat = response.lat
         var lng = response.lng
 
-        var queryUrl = "https://cors-bcs.herokuapp.com/api.meetup.com/find/groups?&category=31&key=2fb727dc2e2c2b62374217f5d45a&sign=true&photo-host=public&lon=" + lng + "&lat=" + lat + "&page=50"
+        var queryUrl = "https://cors-bcs.herokuapp.com/https://api.meetup.com/find/groups?&category=31&key=2fb727dc2e2c2b62374217f5d45a&sign=true&photo-host=public&lon=" + lng + "&lat=" + lat + "&page=50"
             $.ajax({
             url: queryUrl,
             method: "GET"
