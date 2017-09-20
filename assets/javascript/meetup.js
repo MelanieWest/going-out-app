@@ -1,11 +1,12 @@
-$(document).ready(function(){
+function meetup () {
 //ajax call for zip code (please note this is hard-coded with a var zip value for testing purposes and this value will have to be removed)  
-var zip = 32792;
+//var zip = 32792;
 var zipUrl = "https://www.zipcodeapi.com/rest/AbzyNhMMyqYW0scurt7Al2yYktdJlnFWyfvmxh96H72HAfc1JkC4ma2HEgr0D6Wc/info.json/" + zip + "/degrees"
 
 //two ajax calls - first to call the zipcode, and then to call Meetup results based on zipcode. Each call is separated by category.
+
 //FOR OUTDOORS CATEGORY 
-$("form").on("click", function() {
+if (activity == "mo") {
 $.ajax({      
     url: zipUrl,
     method:  "GET"
@@ -33,15 +34,14 @@ $.ajax({
         $("#display").html("Group Name: " + name + " " + "Description: " + description + " " + "Link: " + result);
         thumbnail.attr("src", photo);
         $("#display").prepend(thumbnail);
-    };
-}); 
+        };
+    }); 
 });
-});
-});
+} //End if statement for outdoors
 
 
 // //FOR SPORTS AND FITNESS CATEGORY 
-$("form").on("click", function() {
+if (activity == "msp") {
 $.ajax({      
         url: zipUrl,
         method:  "GET"
@@ -71,12 +71,11 @@ $.ajax({
             $("#display").prepend(thumbnail);
         };
     }); 
-    });
-    });
-    });
+});
+} //End if statement for sports
 
 //FOR SOCIAL CATEGORY 
-$("form").on("click", function() {
+if (activity == "mso") {
 $.ajax({      
         url: zipUrl,
         method:  "GET"
@@ -106,12 +105,12 @@ $.ajax({
             $("#display").prepend(thumbnail);
         };
     }); 
-    });
-    });
-    });
+});
+} //End if statement for social
+
 
 // //FOR SCI-FI CATEGORY 
-$("form").on("click", function() {
+if (activity == "mg") {
 $.ajax({      
         url: zipUrl,
         method:  "GET"
@@ -141,9 +140,10 @@ $.ajax({
             $("#display").prepend(thumbnail);
         };
     }); 
-    });
-    });
-    });
+});
+} //End if statement for sci-fi
+
+}; //End meetup function
 
 
 
