@@ -31,10 +31,17 @@ $.ajax({
         // console.log(responseMeetup[randomReturn].name) 
         var str = "Meetup Link";
         var result = str.link(link); 
-        $("#display").html("Group Name: " + name + " " + "Description: " + description + " " + "Link: " + result);
+        // groupLink = '<a href =' + result + ' target = "_blank"> Meetup Link </a>'
+        var divLink = $("<div class='meetup-link'>");
+        $("#display").html("Group Name: " + name + " " + "Description: " + description);
         thumbnail.attr("src", photo);
         $("#display").prepend(thumbnail);
-    
+        $("#display").append(divLink);
+        $(".meetup-link").html("Link: " + result);
+        $(".meetup-link").click(function(){
+            window.open(link, 'window name', 'window settings');
+            return false;
+        }); 
     }); 
 });
 } //End if statement for outdoors
