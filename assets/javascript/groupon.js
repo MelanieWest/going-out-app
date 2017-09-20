@@ -69,7 +69,4 @@ $.ajax({        // this request is listed first, but it logs second (after group
         $("#display").append(tableDiv); //insert table into document
 });  // end of zip to city ajax request
 
-   
-    
-
 })      //end of document ready
