@@ -30,7 +30,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
     
     console.log('Random number is '+ranNum+ ', and the theme is '+theme);
 
-    var zipUrl = "https://cors-bcs.herokuapp.com/www.zipcodeapi.com/rest/AbzyNhMMyqYW0scurt7Al2yYktdJlnFWyfvmxh96H72HAfc1JkC4ma2HEgr0D6Wc/info.json/" + zip + "/degrees"
+    var zipUrl = "https://www.zipcodeapi.com/rest/AbzyNhMMyqYW0scurt7Al2yYktdJlnFWyfvmxh96H72HAfc1JkC4ma2HEgr0D6Wc/info.json/" + zip + "/degrees"
     
     $.ajax({        // this request is listed first, but it logs second (after groupon)
         url: zipUrl,
