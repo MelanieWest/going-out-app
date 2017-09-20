@@ -14,7 +14,7 @@ $.ajax({
     console.log(response);
     var lat = response.lat
     var lng = response.lng
-    var queryUrl = "https://api.meetup.com/find/groups?&category=23&key=2fb727dc2e2c2b62374217f5d45a&sign=true&photo-host=public&lon=" + lng + "&lat=" + lat + "&page=50"
+    var queryUrl = "https://api.meetup.com/find/groups?&category=23&key=2fb727dc2e2c2b62374217f5d45a&sign=true&photo-host=public&lon=" + lng + "&lat=" + lat + "&page=3"
         $.ajax({
         url: queryUrl,
         method: "GET"
@@ -26,14 +26,20 @@ $.ajax({
         var description = responseOutdoors[randomReturn].description;
         var link = responseOutdoors[randomReturn].link;
         console.log(responseOutdoors);
-        //need to get random results working Weds morning, code commented out
-        // var randomReturn = Math.floor(Math.random(responseMeetup)*1);
-        // console.log(responseMeetup[randomReturn].name) 
+        
         var str = "Meetup Link";
         var result = str.link(link); 
-        $("#display").html("Group Name: " + name + " " + "Description: " + description + " " + "Link: " + result);
+        // groupLink = '<a href =' + result + ' target = "_blank"> Meetup Link </a>'
+        var divLink = $("<div class='meetup-link'>");
+        $("#display").html("Group Name: " + name + " " + "Description: " + description);
         thumbnail.attr("src", photo);
         $("#display").prepend(thumbnail);
+        $("#display").append(divLink);
+        $(".meetup-link").html("Link: " + result);
+        $(".meetup-link").click(function(){
+            window.open(link, 'window name', 'window settings');
+            return false;
+        });
     
     }); 
 });
@@ -61,14 +67,20 @@ $.ajax({
             var description = responseSports[randomReturn].description;
             var link = responseSports[randomReturn].link;
             console.log(responseSports);
-            //need to get random results working Weds morning, code commented out
-            // var randomReturn = Math.floor(Math.random(responseMeetup)*1);
-            // console.log(responseMeetup[randomReturn].name) 
+            
             var str = "Meetup Link";
             var result = str.link(link); 
-            $("#display").html("Group Name: " + name + " " + "Description: " + description + " " + "Link: " + result);
+            // groupLink = '<a href =' + result + ' target = "_blank"> Meetup Link </a>'
+            var divLink = $("<div class='meetup-link'>");
+            $("#display").html("Group Name: " + name + " " + "Description: " + description);
             thumbnail.attr("src", photo);
             $("#display").prepend(thumbnail);
+            $("#display").append(divLink);
+            $(".meetup-link").html("Link: " + result);
+            $(".meetup-link").click(function(){
+                window.open(link, 'window name', 'window settings');
+                return false;
+            });
         
     }); 
 });
@@ -97,14 +109,20 @@ $.ajax({
             var description = responseSocial[randomReturn].description;
             var link = responseSocial[randomReturn].link;
             console.log(responseSocial);
-            //need to get random results working Weds morning, code commented out
-            // var randomReturn = Math.floor(Math.random(responseMeetup)*1);
-            // console.log(responseMeetup[randomReturn].name) 
+
             var str = "Meetup Link";
             var result = str.link(link); 
-            $("#display").html("Group Name: " + name + " " + "Description: " + description + " " + "Link: " + result);
+            // groupLink = '<a href =' + result + ' target = "_blank"> Meetup Link </a>'
+            var divLink = $("<div class='meetup-link'>");
+            $("#display").html("Group Name: " + name + " " + "Description: " + description);
             thumbnail.attr("src", photo);
             $("#display").prepend(thumbnail);
+            $("#display").append(divLink);
+            $(".meetup-link").html("Link: " + result);
+            $(".meetup-link").click(function(){
+                window.open(link, 'window name', 'window settings');
+                return false;
+            });
     
     }); 
 });
@@ -134,11 +152,20 @@ $.ajax({
             var description = responseScifi[randomReturn].description;
             var link = responseScifi[randomReturn].link;
             console.log(responseScifi);
+            
             var str = "Meetup Link";
             var result = str.link(link); 
-            $("#display").html("Group Name: " + name + " " + "Description: " + description + " " + "Link: " + result);
+            // groupLink = '<a href =' + result + ' target = "_blank"> Meetup Link </a>'
+            var divLink = $("<div class='meetup-link'>");
+            $("#display").html("Group Name: " + name + " " + "Description: " + description);
             thumbnail.attr("src", photo);
             $("#display").prepend(thumbnail);
+            $("#display").append(divLink);
+            $(".meetup-link").html("Link: " + result);
+            $(".meetup-link").click(function(){
+                window.open(link, 'window name', 'window settings');
+                return false;
+            });
     }); 
 });
 } //End if statement for sci-fi
