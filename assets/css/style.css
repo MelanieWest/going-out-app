@@ -10,3 +10,8 @@ h2 {
 #user-time, #user-activity, #user-category {
     display: none;
 }
+
+.title {
+    font-family: 'Righteous', cursive;
+    font-size: 30pt;
+}
