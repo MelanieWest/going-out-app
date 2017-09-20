@@ -97,5 +97,13 @@ $(document).ready(function(){
          console.log("You chose a sports meetup!");
         //ajax request for evening nightlife/activity
         }
+    if (activity == "mso") {
+        console.log("You chose an outdoors meetup!");
+        //ajax request for morning activity 
+        }
+        if (activity == "mg") {
+            console.log("You chose a sports meetup!");
+        //ajax request for evening nightlife/activity
+        }
     }
     })
