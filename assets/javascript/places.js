@@ -1,3 +1,5 @@
+function places () {
+
 google.maps.event.addDomListener(window, 'load', initialize);
 
 //assume that my input activity variable is called 'act'
@@ -34,18 +36,20 @@ google.maps.event.addDomListener(window, 'load', initialize);
     
       map = new google.maps.Map(document.getElementById('map'), {
           center: city,
-          zoom: 15
-        });
+          zoom: 15      //zoom: 0 shows the whole earth.  Bigger #'s are closer
+        });         // draw the map (zoom: 15 gives a map that's about 1 mile to a side)
     
       var request = {
         location: city,
         radius: searchRad,    //search by the selected radius
         type: [theme]     //search according to selected theme
-      };
+      };        //end of request parameter object
     
       service = new google.maps.places.PlacesService(map);
       service.nearbySearch(request, callback);
-    }
+
+    }           // end of initialize function
+
     
     function callback(results, status) {
       if (status == google.maps.places.PlacesServiceStatus.OK) {
@@ -55,9 +59,11 @@ google.maps.event.addDomListener(window, 'load', initialize);
           var marker = new google.maps.Marker({
              map: map,
              position: place.geometry.location
-            });
+            });     //end of marker placement block
  
-        }
-      }
-    }
+        }       //end of 'for' loop that collects results
+      }         // end of 'if' block for places search
+    }           // end of callback function
+
+}   // end of function 'places' block
 
