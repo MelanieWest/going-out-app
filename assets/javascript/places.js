@@ -19,22 +19,21 @@ google.maps.event.addDomListener(window, 'load', initialize);
     var theme;        // this variable will hold the selected activity
     var lat, lng;
     var placeLink, tableDiv;    //used for output to document
-    var activeType = ['aquarium','bowling_alley','night_club','amusement_park'];
-    var quietType = ['art_gallery','movie_theater','museum','restaurant'];
+    var activityPlaces = ['aquarium','bowling_alley','night_club','amusement_park','art_gallery','movie_theater','museum','restaurant'];
     
     var ranNum  = 0;  //default ran # to select activity type
     var itemSel = 0;  //default ran # to select random result
     
-    ranNum = Math.floor(Math.random()*4); //used to select a random activity
+    ranNum = Math.floor(Math.random()*8); //used to select a random activity
 
-    if (act == 'quiet'){theme = quietType[ranNum];}
-    if (act == 'active'){theme = activeType[ranNum];}
+    theme = activityPlaces[ranNum];
+   
     
     console.log('Random number is '+ranNum+ ', and the theme is '+theme);
 
     var cors = "https://cors-bcs.herokuapp.com/"
     
-    var zipUrl = cors + "https://www.zipcodeapi.com/rest/AbzyNhMMyqYW0scurt7Al2yYktdJlnFWyfvmxh96H72HAfc1JkC4ma2HEgr0D6Wc/info.json/" + zip + "/degrees"
+    var zipUrl = cors + "https://www.zipcodeapi.com/rest/OupZPnT4uALMa6qNSjiMWbEKvcYjSbHGF7FuuzzYalKksa8ktq7qBLb7X9qQl8w0/info.json/" + zip + "/degrees"
     
     $.ajax({        // this request is listed first, but it logs second (after groupon)
         url: zipUrl,
@@ -84,8 +83,8 @@ google.maps.event.addDomListener(window, 'load', initialize);
           //create a link to the website, then a table div to display results
 
           placeLink = '<a href ='+results[itemSel].dealUrl+' target = "_blank"> Groupon Link </a>'
-          tableDiv.append('<tr><th> Name  </th><td> '+ results[itemSel].html_attributions.name +'</td></tr><tr><th> Location </th><td> '+ results[itemSel].vicinity + '</td></tr>')
-          tableDiv.append('<img src ='+ results[itemSel].photos[0].html_attributions + '/>')
+          tableDiv.append('<tr><th> Name  </th><td> '+ results[itemSel].name +'</td></tr><tr><th> Location </th><td> '+ results[itemSel].vicinity + '</td></tr>')
+          tableDiv.append(results[itemSel].photos[0].html_attributions) //this is formatted as an 'a' element
   
           var marker = new google.maps.Marker({
              map: map,
