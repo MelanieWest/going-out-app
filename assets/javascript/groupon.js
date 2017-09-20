@@ -51,8 +51,7 @@ $.ajax({        // this request is listed first, but it logs second (after group
 
         // groupon doesn't show addresses.  Instead, provide the groupon url in a link
 
-        merchLink = "groupon link";
-        groupLink = merchLink.link(e.deals[itemSel].dealUrl);
+        groupLink = '<a href ='+e.deals[itemSel].dealUrl+' target = "_blank"> Groupon Link </a>'
 
  
         //this next line was for creating a table with multiple options listed
