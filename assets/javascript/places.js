@@ -1,5 +1,7 @@
 function places () {
 
+$("#display").append('<div id ="map"></div>');
+
 google.maps.event.addDomListener(window, 'load', initialize);
 
 //assume that my input activity variable is called 'act'
@@ -30,7 +32,9 @@ google.maps.event.addDomListener(window, 'load', initialize);
     
     console.log('Random number is '+ranNum+ ', and the theme is '+theme);
 
-    var zipUrl = "https://www.zipcodeapi.com/rest/AbzyNhMMyqYW0scurt7Al2yYktdJlnFWyfvmxh96H72HAfc1JkC4ma2HEgr0D6Wc/info.json/" + zip + "/degrees"
+    var cors = "https://cors-bcs.herokuapp.com/"
+    
+    var zipUrl = cors + "https://www.zipcodeapi.com/rest/AbzyNhMMyqYW0scurt7Al2yYktdJlnFWyfvmxh96H72HAfc1JkC4ma2HEgr0D6Wc/info.json/" + zip + "/degrees"
     
     $.ajax({        // this request is listed first, but it logs second (after groupon)
         url: zipUrl,
@@ -80,8 +84,8 @@ google.maps.event.addDomListener(window, 'load', initialize);
           //create a link to the website, then a table div to display results
 
           placeLink = '<a href ='+results[itemSel].dealUrl+' target = "_blank"> Groupon Link </a>'
-          tableDiv.append('<tr><th> Activity </th><td> '+ results[itemSel].title +'</td></tr><tr><th> Price </th><td> '+ results[itemSel].options[0].price.formattedAmount + '</td></tr><tr><th> Link </th><td>' + groupLink + '</td></tr>')
-          tableDiv.append('<img src ='+ results[itemSel].largeImageUrl+ '/>')
+          tableDiv.append('<tr><th> Name  </th><td> '+ results[itemSel].html_attributions.name +'</td></tr><tr><th> Location </th><td> '+ results[itemSel].vicinity + '</td></tr>')
+          tableDiv.append('<img src ='+ results[itemSel].photos[0].html_attributions + '/>')
   
           var marker = new google.maps.Marker({
              map: map,
@@ -96,7 +100,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
     });   // end of zip
 
-    $("#display").append(tableDiv); //insert table into document
+    $("#display").prepend(tableDiv); //insert table into document
     
 }   // end of function 'places' block
 
