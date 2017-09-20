@@ -1,8 +1,8 @@
-$(document).ready(function(){
+// $(document).ready(function(){
   
-// activity will either be 'r'(restaurant) or 'activ' (activity)
-// zip is the event zip code
-// time is 'a' (am or morning) or 'p' (pm or evening)
+// // activity will either be 'r'(restaurant) or 'activ' (activity)
+// // zip is the event zip code
+// // time is 'a' (am or morning) or 'p' (pm or evening)
 
 // 'activity' and 'zip' will be passed in;  for now they are not so I am setting default values
  
@@ -11,16 +11,16 @@ var zip = 32809;
 var tableDiv, merchLink, merchUrl, groupLink;
 var itemSel=0;
 
-//these will be determined by input
+// //these will be determined by input
 
-var category, city;
+// var category, city;
 
 if (activity == 'r'){category = 'food-and-drink';}
 if (activity == 'activ'){category = 'things-to-do';}
 if (activity == 'health'){category = 'beauty-and-spas';}
 
 
-var zipUrl = "https://www.zipcodeapi.com/rest/Kw7CrOFpJDGmp331IVUUOY7Pue98LjOwQW9hLPGutnQSqTT8PO3DMbshpCpbWeIM/info.json/" + zip + "/degrees"
+// var zipUrl = "https://www.zipcodeapi.com/rest/Kw7CrOFpJDGmp331IVUUOY7Pue98LjOwQW9hLPGutnQSqTT8PO3DMbshpCpbWeIM/info.json/" + zip + "/degrees"
 
 //zip code request is limited to 50 calls/day.  Hard code 'city' to avoid errors
 
@@ -47,8 +47,7 @@ $.ajax({        // this request is listed first, but it logs second (after group
     method:  "GET" 
     }).done(function(e){
 
-    console.log(e);
-
+//     console.log(e);
 
     itemSel = Math.floor(Math.random()*50);
 
@@ -73,7 +72,4 @@ $.ajax({        // this request is listed first, but it logs second (after group
         $("#display").append(tableDiv); //insert table into document
 });  // end of zip to city ajax request
 
-   
-    
-
-})      //end of document ready
+// })      //end of document ready
