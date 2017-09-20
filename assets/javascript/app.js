@@ -115,5 +115,5 @@ $(document).ready(function(){
             console.log("You chose a sports meetup!");
             meetup();
         }
-    }
+    } //End ajax function
 })
