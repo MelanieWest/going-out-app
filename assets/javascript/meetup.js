@@ -41,12 +41,8 @@ $.ajax({
         $(".meetup-link").click(function(){
             window.open(link, 'window name', 'window settings');
             return false;
-<<<<<<< HEAD
-        }); 
-=======
         });
     
->>>>>>> 17cba38ba2706ac0e77c275b842263602c6a81a6
     }); 
 });
 } //End if statement for outdoors
