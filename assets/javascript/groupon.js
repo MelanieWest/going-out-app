@@ -6,7 +6,6 @@ function groupon () {
 
 // 'activity' and 'zip' will be passed in;  for now they are not so I am setting default values
 
-//var activity = 'activ';
 //var zip = 32809;
 var tableDiv, merchLink, merchUrl, groupLink;
 var itemSel=0;

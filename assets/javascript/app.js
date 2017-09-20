@@ -82,31 +82,30 @@ $(document).ready(function(){
 
 
     function ajax (){
-    if (activity == "r") {
-        console.log("You chose a restaurant!");
-        groupon();        
+        if (activity == "r") {
+            console.log("You chose a restaurant!");
+            groupon();        
 
+            }
+        if (activity == "a") {
+            console.log("You chose an activity!");
+            groupon();
+            }
+        if (activity == "mo") {
+            console.log("You chose an outdoors meetup!");
+            meetup();
         }
-    if (activity == "a") {
-        console.log("You chose an activity!");
-        //ajax request for evening restaraunt/bar
-        groupon();
-        }
-    if (activity == "mo") {
-        console.log("You chose an outdoors meetup!");
-        //ajax request for morning activity 
-        }
-     if (activity == "msp") {
-         console.log("You chose a sports meetup!");
-        //ajax request for evening nightlife/activity
-        }
-    if (activity == "mso") {
-        console.log("You chose an outdoors meetup!");
-        //ajax request for morning activity 
+        if (activity == "msp") {
+            console.log("You chose a sports meetup!");
+            meetup();
+            }
+        if (activity == "mso") {
+            console.log("You chose an outdoors meetup!");
+            meetup();
         }
         if (activity == "mg") {
             console.log("You chose a sports meetup!");
-        //ajax request for evening nightlife/activity
+            meetup();
         }
     }
-    })
+})
