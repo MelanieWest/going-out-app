@@ -43,7 +43,7 @@ $.ajax({        // this request is listed first, but it logs second (after group
     method:  "GET" 
     }).done(function(e){
 
-//     console.log(e);
+         console.log(e);
 
     itemSel = Math.floor(Math.random()*50);
 
