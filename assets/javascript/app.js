@@ -11,10 +11,17 @@ $(document).ready(function(){
         zip = $("#zip-input").val()        
         event.preventDefault();  
         console.log("Zip code: " + zip);
-        $("#user-zip").css("display", "none");                
-        $("#user-activity").css("display", "block");
-        console.log(time)
-    })
+        console.log("Zip length: " + zip.length);
+
+        if (zip.length == 5) {
+            $("#user-zip").css("display", "none");                
+            $("#user-activity").css("display", "block");
+        } else {
+            $("#user-zip").append("<div id = 'message'>")
+            $("#message").html("<br><br><h2>No can do. We need a five-digit zip code.");
+        }
+        
+    });
 
 //Restaurant Selection
 
