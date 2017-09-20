@@ -12,6 +12,7 @@ $(document).on("click","#existing-user", function(){
         .auth()
         .signInWithEmailAndPassword(email, password)
         .then((user) => {
+            //Add code to send to next page here
             console.log('user success', user);
              currentUserID = (user.uid)
             console.log(currentUserID)
