@@ -31,7 +31,7 @@ $(document).ready(function(){
         $("#display").html("<h2>Give this a taste:<br>");
         console.log(activity);
         ajax();
-    })
+    });
 
 //Activity Selection
 
@@ -41,7 +41,7 @@ $(document).ready(function(){
         $("#display").html("<h2>Give this a go:<br>");
         console.log(activity);
         ajax();
-    })
+    });
 
 //Meetup Selection
 
@@ -51,14 +51,14 @@ $(document).ready(function(){
         $("#user-category").css("display", "block");
         console.log(activity);
         ajax();
-    })
+    });
 
     
     $("#places").on("click", function(){
         event.preventDefault();    
         $("#display").html("<h2>Here you go:<br>");             
         ajax();
-    })
+    });
 
 //Meetup Sub-categories
 
@@ -68,7 +68,7 @@ $(document).ready(function(){
         $("#display").html("<h2>Check this out: ");
         console.log(activity);
         ajax();
-    })
+    });
 
     $("#sports").on("click", function(){
         activity = "msp"
@@ -76,7 +76,7 @@ $(document).ready(function(){
         $("#display").html("<h2>Check this out: ");
         console.log(activity);
         ajax();
-    })
+    });
 
     $("#social").on("click", function(){
         activity = "mso"
@@ -84,7 +84,7 @@ $(document).ready(function(){
         $("#display").html("<h2>Check this out: " + result);
         console.log(activity);
         ajax();
-    })
+    });
 
     $("#gaming").on("click", function(){
         activity = "mg"
@@ -92,7 +92,7 @@ $(document).ready(function(){
         $("#display").html("<h2>Check this out: " + result);
         console.log(activity);
         ajax();
-    })
+    });
 
 //Conditions for 
 
@@ -123,4 +123,4 @@ $(document).ready(function(){
             meetup();
         }
     } //End ajax function
-})
+});
