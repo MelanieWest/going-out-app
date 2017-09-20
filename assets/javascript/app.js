@@ -46,12 +46,19 @@ $(document).ready(function(){
         ajax();
     })
 
+    
+    $("#places").on("click", function(){
+        event.preventDefault();    
+        $("#display").html("<h2>Here you go:<br>");             
+        ajax();
+    })
+
 //Meetup Sub-categories
 
     $("#outdoors").on("click", function(){
         activity = "mo"
         event.preventDefault();    
-        $("#display").html("<h2>Check this out: " + result);
+        $("#display").html("<h2>Check this out: ");
         console.log(activity);
         ajax();
     })
@@ -59,7 +66,7 @@ $(document).ready(function(){
     $("#sports").on("click", function(){
         activity = "msp"
         event.preventDefault();    
-        $("#display").html("<h2>Check this out: " + result);
+        $("#display").html("<h2>Check this out: ");
         console.log(activity);
         ajax();
     })

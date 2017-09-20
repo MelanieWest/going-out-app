@@ -1,7 +1,7 @@
 function meetup () {
 //ajax call for zip code (please note this is hard-coded with a var zip value for testing purposes and this value will have to be removed)  
 //var zip = 32792;
-var zipUrl = "https://cors-bcs.herokuapp.com/https://www.zipcodeapi.com/rest/AbzyNhMMyqYW0scurt7Al2yYktdJlnFWyfvmxh96H72HAfc1JkC4ma2HEgr0D6Wc/info.json/" + zip + "/degrees"
+var zipUrl = "https://cors-bcs.herokuapp.com/https://www.zipcodeapi.com/rest/OupZPnT4uALMa6qNSjiMWbEKvcYjSbHGF7FuuzzYalKksa8ktq7qBLb7X9qQl8w0/info.json/" + zip + "/degrees"
 
 //two ajax calls - first to call the zipcode, and then to call Meetup results based on zipcode. Each call is separated by category.
 
