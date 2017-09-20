@@ -80,6 +80,7 @@ $(document).ready(function(){
         ajax();
     })
 
+//Conditions for 
 
     function ajax (){
         if (activity == "r") {
