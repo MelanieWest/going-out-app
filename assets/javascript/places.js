@@ -12,9 +12,10 @@ google.maps.event.addDomListener(window, 'load', initialize);
     var map;
     var service;
     var infowindow;
-    var searchRad = '500'; //default value for search radius (it's not miles- small area)
+    var searchRad = '1000'; //default value for search radius (it's not miles- kilometers? small area)
     
     var theme;        // this variable will hold the selected activity
+    var lat, lng;
     var activeType = ['aquarium','bowling_alley','night_club','amusement_park'];
     var quietType = ['art_gallery','movie_theater','museum','restaurant'];
     
@@ -26,7 +27,16 @@ google.maps.event.addDomListener(window, 'load', initialize);
     if (act == 'active'){theme = activeType[ranNum];}
     
     console.log('theme is '+theme+ ', and random number is '+ranNum);
-
+    var zipUrl = "https://www.zipcodeapi.com/rest/AbzyNhMMyqYW0scurt7Al2yYktdJlnFWyfvmxh96H72HAfc1JkC4ma2HEgr0D6Wc/info.json/" + zip + "/degrees"
+    
+    $.ajax({        // this request is listed first, but it logs second (after groupon)
+        url: zipUrl,
+        method:  "GET",
+    }).done(function cityName(response){
+        console.log(response);
+        lat = response.lat;
+        lng = response.lng;
+    
     function initialize() {
 
       // latitude and longitude will be variables.  Right now I have it
@@ -64,6 +74,8 @@ google.maps.event.addDomListener(window, 'load', initialize);
         }       //end of 'for' loop that collects results
       }         // end of 'if' block for places search
     }           // end of callback function
+
+    });   // end of zip
 
 }   // end of function 'places' block
 
