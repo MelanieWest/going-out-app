@@ -14,12 +14,12 @@ $.ajax({
     console.log(response);
     var lat = response.lat
     var lng = response.lng
-    var queryUrl = "https://api.meetup.com/find/groups?&category=23&key=2fb727dc2e2c2b62374217f5d45a&sign=true&photo-host=public&lon=" + lng + "&lat=" + lat + "&page=3"
+    var queryUrl = "https://api.meetup.com/find/groups?&category=23&key=2fb727dc2e2c2b62374217f5d45a&sign=true&photo-host=public&lon=" + lng + "&lat=" + lat + "&page=50"
         $.ajax({
         url: queryUrl,
         method: "GET"
         }).done(function(responseOutdoors) {
-        for(var i = 0; i < responseOutdoors.length; i++) {
+        var randomReturn = Math.floor(Math.random()*50);                            
         var thumbnail = $("<img>");
         var name = responseOutdoors[randomReturn].name;
         var photo = responseOutdoors[randomReturn].group_photo.photo_link;
@@ -34,7 +34,7 @@ $.ajax({
         $("#display").html("Group Name: " + name + " " + "Description: " + description + " " + "Link: " + result);
         thumbnail.attr("src", photo);
         $("#display").prepend(thumbnail);
-        };
+    
     }); 
 });
 } //End if statement for outdoors
@@ -49,12 +49,12 @@ $.ajax({
         console.log(response);
         var lat = response.lat
         var lng = response.lng
-        var queryUrl = "https://api.meetup.com/find/groups?&category=32&key=2fb727dc2e2c2b62374217f5d45a&sign=true&photo-host=public&lon=" + lng + "&lat=" + lat + "&page=3"
+        var queryUrl = "https://api.meetup.com/find/groups?&category=32&key=2fb727dc2e2c2b62374217f5d45a&sign=true&photo-host=public&lon=" + lng + "&lat=" + lat + "&page=50"
             $.ajax({
             url: queryUrl,
             method: "GET"
             }).done(function(responseSports) {
-            for(var i = 0; i < responseSports.length; i++) {
+            var randomReturn = Math.floor(Math.random()*50);                                
             var thumbnail = $("<img>");
             var name = responseSports[randomReturn].name;
             var photo = responseSports[randomReturn].group_photo.photo_link;
@@ -69,7 +69,7 @@ $.ajax({
             $("#display").html("Group Name: " + name + " " + "Description: " + description + " " + "Link: " + result);
             thumbnail.attr("src", photo);
             $("#display").prepend(thumbnail);
-        };
+        
     }); 
 });
 } //End if statement for sports
@@ -83,12 +83,14 @@ $.ajax({
         console.log(response);
         var lat = response.lat
         var lng = response.lng
-        var queryUrl = "https://api.meetup.com/find/groups?&category=31&key=2fb727dc2e2c2b62374217f5d45a&sign=true&photo-host=public&lon=" + lng + "&lat=" + lat + "&page=3"
+        var queryUrl = "https://api.meetup.com/find/groups?&category=31&key=2fb727dc2e2c2b62374217f5d45a&sign=true&photo-host=public&lon=" + lng + "&lat=" + lat + "&page=50"
             $.ajax({
             url: queryUrl,
             method: "GET"
             }).done(function(responseSocial) {
-            for(var i = 0; i < responseSocial.length; i++) {
+
+            var randomReturn = Math.floor(Math.random()*50);                
+
             var thumbnail = $("<img>");
             var name = responseSocial[randomReturn].name;
             var photo = responseSocial[randomReturn].group_photo.photo_link;
@@ -103,7 +105,7 @@ $.ajax({
             $("#display").html("Group Name: " + name + " " + "Description: " + description + " " + "Link: " + result);
             thumbnail.attr("src", photo);
             $("#display").prepend(thumbnail);
-        };
+    
     }); 
 });
 } //End if statement for social
@@ -132,9 +134,6 @@ $.ajax({
             var description = responseScifi[randomReturn].description;
             var link = responseScifi[randomReturn].link;
             console.log(responseScifi);
-            //need to get random results working Weds morning, code commented out
-            // var randomReturn = Math.floor(Math.random(responseMeetup)*1);
-            // console.log(responseMeetup[randomReturn].name) 
             var str = "Meetup Link";
             var result = str.link(link); 
             $("#display").html("Group Name: " + name + " " + "Description: " + description + " " + "Link: " + result);

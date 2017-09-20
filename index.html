@@ -61,6 +61,26 @@
             </form>
             -->
         </div>
+        <!--this div holds all of the login form-->
+        <div id="login-form">
+            <form>
+                    Email:<br>
+                    <input type="text" id="email">
+                    <br>
+                    Password:<br>
+                    <input type="password" id="password">
+                    <br><br>
+                    <input type="button" value="Login" id="existing-user">
+                    <input type="button" value="Sign up" id="new-user">
+                   
+            </form> 
+        </div>
+        <div>
+        <!--button to add points, dont know where this should be -->
+        <input type="button" value="Add Points" id="test">
+        </div>
+        <!--Total user points will be displayed here--> 
+        <div id = "points"></div>
     </div>
 </body>
 </html>
@@ -70,3 +90,16 @@
 <script src="assets/javascript/groupon.js" ></script>
 <script src="assets/javascript/meetup.js" ></script>
 <script src="assets/javascript/places.js" ></script>
+<script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+<script>
+  var config = {
+    apiKey: "AIzaSyBk00mjk3Q5-gkU30T3C__SvRoqYp4fRdg",
+    authDomain: "go-out-d7a31.firebaseapp.com",
+    databaseURL: "https://go-out-d7a31.firebaseio.com",
+    projectId: "go-out-d7a31",
+    storageBucket: "",
+    messagingSenderId: "657029759666"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="assets/javascript/firebase.js" ></script>
