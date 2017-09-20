@@ -5,47 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
     <link rel = "stylesheet" type="text/css" href="assets/css/reset.css">
-    <link rel = "stylesheet" type="text/css" href="assets/css/style.css">    
+    <link rel = "stylesheet" type="text/css" href="assets/css/style.css">  
+    <!-- Compressed CSS -->     
 </head>
 <body>
-    <h1>Activity App</h1>
-    <br>
+<!-- testing Bulma CSS library here with a practice header -->
+    <section class="hero is-primary">
+        <div class="hero-body">
+        <div class="container">
+        <div class="container has-text-centered">
+            <h1 class="title">Activity Challenge</h1>
+            <h2 class="subtitle">Have fun. <div class="container has-text-centered"></h2>
+        </div>
+        </div>
+    </section>   
     <!--Add input form-->
+          
     <div id="display">
-    
+        <br>
+        <div id="content">
+          
         <!--User Enters Zip Code Here-->
 
-        <form id="user-zip">
-            <label for="zip-input"><p>Enter your zip code</p></label>
-            <input type="number" id="zip-input"><br>
-            <input id="zip-button" type="submit" value="Enter">
-        </form>
+            <form id="user-zip">
+                <label for="zip-input"><p>Enter your zip code</p></label>
+                <input type="number" id="zip-input"><br>
+                <input id="zip-button" type="submit" value="Enter">
+            </form>
 
-        <!--User Selects Activity Here-->
+            <!--User Selects Activity Here-->
 
-        <form id="user-activity">
-            <label for="rest"><p>So what do you want to do?</p></label>
-            <input id="rest" type="submit" value="Restaurant">
-            <input id="act" type="submit" value="Activity">
-            <input id="meet" type="submit" value="MeetUp">            
-        </form>
+            <form id="user-activity">
+                <label for="rest"><p>So what do you want to do?</p></label>
+                <input id="rest" type="submit" value="Restaurant">
+                <input id="act" type="submit" value="Activity">
+                <input id="meet" type="submit" value="MeetUp">            
+            </form>
 
-        <form id="user-category">
-            <label for="rest"><p>Sweet. What, exactly, are you looking for?</p></label>
-            <input id="outdoors" type="submit" value="Outdoors/Adventure">
-            <input id="sports" type="submit" value="Sports/Fitness">
-            <input id="social" type="submit" value="Social">
-            <input id="gaming" type="submit" value="Gaming">            
-        </form>
-         <!--User Selects Time Here : REMOVED UNLESS TIME VARIABLE USED LATER
+            <form id="user-category">
+                <label for="rest"><p>Sweet. What, exactly, are you looking for?</p></label>
+                <input id="outdoors" type="submit" value="Outdoors/Adventure">
+                <input id="sports" type="submit" value="Sports/Fitness">
+                <input id="social" type="submit" value="Social">
+                <input id="gaming" type="submit" value="Gaming">            
+            </form>
+                <!--User Selects Time Here : REMOVED UNLESS TIME VARIABLE USED LATER
 
-        <form id="user-time">
-            <label for="zip-input"><p>What time do you want to go out?</p></label>
-            <input id="am" type="submit" value="Morning">
-            <input id="pm" type="submit" value="Evening">            
-        </form>
-        -->
+            <form id="user-time">
+                <label for="zip-input"><p>What time do you want to go out?</p></label>
+                <input id="am" type="submit" value="Morning">
+                <input id="pm" type="submit" value="Evening">            
+            </form>
+            -->
+        </div>
     </div>
 </body>
 </html>
@@ -54,4 +69,4 @@
 <script src="assets/javascript/app.js" ></script>
 <script src="assets/javascript/groupon.js" ></script>
 <script src="assets/javascript/meetup.js" ></script>
-<!--<script src="assets/javascript/output.js" ></script>-->
+<script src="assets/javascript/places.js" ></script>
