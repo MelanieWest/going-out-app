@@ -18,7 +18,7 @@ if (activity == 'r'){category = 'food-and-drink';}
 if (activity == 'a'){category = 'things-to-do';}
 
 var cors = "https://cors-bcs.herokuapp.com/"
-var zipUrl = cors + "https://www.zipcodeapi.com/rest/AbzyNhMMyqYW0scurt7Al2yYktdJlnFWyfvmxh96H72HAfc1JkC4ma2HEgr0D6Wc/info.json/" + zip + "/degrees"
+var zipUrl = cors + "https://www.zipcodeapi.com/rest/OupZPnT4uALMa6qNSjiMWbEKvcYjSbHGF7FuuzzYalKksa8ktq7qBLb7X9qQl8w0/info.json/" + zip + "/degrees"
 
 $.ajax({        // this request is listed first, but it logs second (after groupon)
     url: zipUrl,
