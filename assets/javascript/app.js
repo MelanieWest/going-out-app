@@ -21,7 +21,7 @@ $(document).ready(function(){
     $("#rest").on("click", function(){
         activity = "r"
         event.preventDefault();    
-        $("#display").html("<h2>Your result is " + result);
+        $("#display").html("<h2>Give this a taste:<br>");
         console.log(activity);
         ajax();
     })
@@ -31,7 +31,7 @@ $(document).ready(function(){
     $("#act").on("click", function(){
         activity = "a"
         event.preventDefault();    
-        $("#display").html("<h2>Your result is " + result);
+        $("#display").html("<h2>Give this a go:<br>");
         console.log(activity);
         ajax();
     })
@@ -51,7 +51,7 @@ $(document).ready(function(){
     $("#outdoors").on("click", function(){
         activity = "mo"
         event.preventDefault();    
-        $("#display").html("<h2>Your result is " + result);
+        $("#display").html("<h2>Check this out: " + result);
         console.log(activity);
         ajax();
     })
@@ -59,7 +59,7 @@ $(document).ready(function(){
     $("#sports").on("click", function(){
         activity = "msp"
         event.preventDefault();    
-        $("#display").html("<h2>Your result is " + result);
+        $("#display").html("<h2>Check this out: " + result);
         console.log(activity);
         ajax();
     })
@@ -67,7 +67,7 @@ $(document).ready(function(){
     $("#social").on("click", function(){
         activity = "mso"
         event.preventDefault();    
-        $("#display").html("<h2>Your result is " + result);
+        $("#display").html("<h2>Check this out: " + result);
         console.log(activity);
         ajax();
     })
@@ -75,7 +75,7 @@ $(document).ready(function(){
     $("#gaming").on("click", function(){
         activity = "mg"
         event.preventDefault();    
-        $("#display").html("<h2>Your result is " + result);
+        $("#display").html("<h2>Check this out: " + result);
         console.log(activity);
         ajax();
     })

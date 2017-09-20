@@ -13,7 +13,7 @@ var itemSel=0;
 
 // //these will be determined by input
 
-// var category, city;
+var category, city;
 
 if (activity == 'r'){category = 'food-and-drink';}
 if (activity == 'a'){category = 'things-to-do';}
