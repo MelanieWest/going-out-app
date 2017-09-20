@@ -1,13 +1,13 @@
-// $(document).ready(function(){
+function groupon () {
   
 // // activity will either be 'r'(restaurant) or 'activ' (activity)
 // // zip is the event zip code
 // // time is 'a' (am or morning) or 'p' (pm or evening)
 
 // 'activity' and 'zip' will be passed in;  for now they are not so I am setting default values
- 
-var activity = 'activ';
-var zip = 32809;
+
+//var activity = 'activ';
+//var zip = 32809;
 var tableDiv, merchLink, merchUrl, groupLink;
 var itemSel=0;
 
@@ -16,13 +16,9 @@ var itemSel=0;
 // var category, city;
 
 if (activity == 'r'){category = 'food-and-drink';}
-if (activity == 'activ'){category = 'things-to-do';}
-if (activity == 'health'){category = 'beauty-and-spas';}
+if (activity == 'a'){category = 'things-to-do';}
 
-
-// var zipUrl = "https://www.zipcodeapi.com/rest/Kw7CrOFpJDGmp331IVUUOY7Pue98LjOwQW9hLPGutnQSqTT8PO3DMbshpCpbWeIM/info.json/" + zip + "/degrees"
-
-//zip code request is limited to 50 calls/day.  Hard code 'city' to avoid errors
+var zipUrl = "https://www.zipcodeapi.com/rest/AbzyNhMMyqYW0scurt7Al2yYktdJlnFWyfvmxh96H72HAfc1JkC4ma2HEgr0D6Wc/info.json/" + zip + "/degrees"
 
 $.ajax({        // this request is listed first, but it logs second (after groupon)
     url: zipUrl,
@@ -72,4 +68,4 @@ $.ajax({        // this request is listed first, but it logs second (after group
         $("#display").append(tableDiv); //insert table into document
 });  // end of zip to city ajax request
 
-})      //end of document ready
+}      //end of document ready
