@@ -3,10 +3,10 @@ h1 {
     font-size: 36px;
 }
 
-#user-time {
-    display: none;
+h2 {
+    font-size: 30px;
 }
 
-#user-activity {
+#user-time, #user-activity, #user-category {
     display: none;
 }

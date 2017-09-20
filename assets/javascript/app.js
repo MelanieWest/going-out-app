@@ -1,42 +1,108 @@
+var time;
+var zip;
+var activity;
+
 $(document).ready(function(){
-    var zip = $("#zip-code").val()
-    console.log(zip)
-    $("#am").on("click", function(){
-        var time = "a";
-        event.preventDefault();    
-        // needs code to move to next question
+
+//Zip Code Input
+
+    $("#zip-button").on("click", function(){
+        zip = $("#zip-input").val()        
+        event.preventDefault();  
+        console.log("Zip code: " + zip);
+        $("#user-zip").css("display", "none");                
+        $("#user-activity").css("display", "block");
         console.log(time)
     })
-    $("#pm").on("click", function(){
-        var time = "p";
-        event.preventDefault();    
-        // needs code to move to next question
-        console.log(time)
-    })
+
+//Restaurant Selection
+
     $("#rest").on("click", function(){
-        var activity = "r"
+        activity = "r"
         event.preventDefault();    
-        // needs code to move to result
+        $("#display").html("<h2>Your result is ");
         console.log(activity);
-        ajax()
+        ajax();
     })
+
+//Activity Selection
+
     $("#act").on("click", function(){
-        var activity = "activ"
-        // needs code to move to result
+        activity = "a"
+        event.preventDefault();    
+        $("#display").html("<h2>Your result is ");
         console.log(activity);
-        ajax()
+        ajax();
     })
+
+//Meetup Selection
+
+    $("#meet").on("click", function(){
+        event.preventDefault();    
+        $("#user-activity").css("display", "none");                
+        $("#user-category").css("display", "block");
+        console.log(activity);
+        ajax();
+    })
+
+//Meetup Sub-categories
+
+    $("#outdoors").on("click", function(){
+        activity = "mo"
+        event.preventDefault();    
+        $("#display").html("<h2>Your result is ");
+        console.log(activity);
+        ajax();
+    })
+
+    $("#sports").on("click", function(){
+        activity = "msp"
+        event.preventDefault();    
+        $("#display").html("<h2>Your result is ");
+        console.log(activity);
+        ajax();
+    })
+
+    $("#social").on("click", function(){
+        activity = "mso"
+        event.preventDefault();    
+        $("#display").html("<h2>Your result is ");
+        console.log(activity);
+        ajax();
+    })
+
+    $("#gaming").on("click", function(){
+        activity = "mg"
+        event.preventDefault();    
+        $("#display").html("<h2>Your result is ");
+        console.log(activity);
+        ajax();
+    })
+
+
     function ajax (){
-    if (time == "a" && activity == "r") {
+    if (activity == "r") {
+        console.log("You chose a restaurant!");
         //ajax request for morning restaraunt 
         }
-    if (time == "p" && activity == "r") {
+    if (activity == "a") {
+        console.log("You chose an activity!");
         //ajax request for evening restaraunt/bar
         }
-    if (time == "a" && activity == "activ") {
+    if (activity == "mo") {
+        console.log("You chose an outdoors meetup!");
         //ajax request for morning activity 
         }
-     if (time == "p" && activity == "activ") {
+     if (activity == "msp") {
+         console.log("You chose a sports meetup!");
+        //ajax request for evening nightlife/activity
+        }
+    if (activity == "mso") {
+        console.log("You chose an outdoors meetup!");
+        //ajax request for morning activity 
+        }
+        if (activity == "mg") {
+            console.log("You chose a sports meetup!");
         //ajax request for evening nightlife/activity
         }
     }
