@@ -1,8 +1,8 @@
 // $(document).ready(function(){
   
-// // activity will either be 'r'(restaurant) or 'activ' (activity)
-// // zip is the event zip code
-// // time is 'a' (am or morning) or 'p' (pm or evening)
+// activity will either be 'r'(restaurant) or 'activ' (activity)
+// zip is the event zip code
+// time is 'a' (am or morning) or 'p' (pm or evening)
 
 // 'activity' and 'zip' will be passed in;  for now they are not so I am setting default values
  
@@ -13,14 +13,14 @@ var itemSel=0;
 
 // //these will be determined by input
 
-// var category, city;
+var category, city;
 
 if (activity == 'r'){category = 'food-and-drink';}
 if (activity == 'activ'){category = 'things-to-do';}
 if (activity == 'health'){category = 'beauty-and-spas';}
 
 
-// var zipUrl = "https://www.zipcodeapi.com/rest/Kw7CrOFpJDGmp331IVUUOY7Pue98LjOwQW9hLPGutnQSqTT8PO3DMbshpCpbWeIM/info.json/" + zip + "/degrees"
+var zipUrl = "https://www.zipcodeapi.com/rest/Kw7CrOFpJDGmp331IVUUOY7Pue98LjOwQW9hLPGutnQSqTT8PO3DMbshpCpbWeIM/info.json/" + zip + "/degrees"
 
 //zip code request is limited to 50 calls/day.  Hard code 'city' to avoid errors
 
@@ -39,7 +39,8 @@ $.ajax({        // this request is listed first, but it logs second (after group
     tableDiv = $('<table>');
 
     //    tableDiv.html('<tr><th> Activity </th><th> Location </th><th> Link </th> </tr>');
-    tableDiv.html('<tr><th> </th><th> Groupon </th></tr>');
+
+     tableDiv.html('<tr><th> </th><th> Groupon </th></tr>');
 
   
     $.ajax({
@@ -62,14 +63,14 @@ $.ajax({        // this request is listed first, but it logs second (after group
         //this next line was for creating a table with multiple options listed
   //        tableDiv.append('<tr><td>'+ e.deals[itemSel].title +'</td><td>'+ e.deals[itemSel].redemptionLocation + '</td><td>'+ merchLink + '</td></tr>' )
  
-       tableDiv.append('<tr><th> Activity </th><td> '+ e.deals[itemSel].title +'</td></tr><tr><th> Price </th><td> '+ e.deals[itemSel].options[0].price.formattedAmount + '</td></tr><tr><th> Link </th><td>' + groupLink + '</td></tr>')
+        tableDiv.append('<tr><th> Activity </th><td> '+ e.deals[itemSel].title +'</td></tr><tr><th> Price </th><td> '+ e.deals[itemSel].options[0].price.formattedAmount + '</td></tr><tr><th> Link </th><td>' + groupLink + '</td></tr>')
 
 //}      //end of for loop
-            return tableDiv;
+        return tableDiv;
             
     });  //end of groupon ajax request
 
         $("#display").append(tableDiv); //insert table into document
-});  // end of zip to city ajax request
+  });  // end of zip to city ajax request
 
 })      //end of document ready
