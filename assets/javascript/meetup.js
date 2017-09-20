@@ -21,10 +21,10 @@ $.ajax({
         }).done(function(responseOutdoors) {
         for(var i = 0; i < responseOutdoors.length; i++) {
         var thumbnail = $("<img>");
-        var name = responseOutdoors[i].name;
-        var photo = responseOutdoors[i].group_photo.photo_link;
-        var description = responseOutdoors[i].description;
-        var link = responseOutdoors[i].link;
+        var name = responseOutdoors[randomReturn].name;
+        var photo = responseOutdoors[randomReturn].group_photo.photo_link;
+        var description = responseOutdoors[randomReturn].description;
+        var link = responseOutdoors[randomReturn].link;
         console.log(responseOutdoors);
         //need to get random results working Weds morning, code commented out
         // var randomReturn = Math.floor(Math.random(responseMeetup)*1);
@@ -56,10 +56,10 @@ $.ajax({
             }).done(function(responseSports) {
             for(var i = 0; i < responseSports.length; i++) {
             var thumbnail = $("<img>");
-            var name = responseSports[i].name;
-            var photo = responseSports[i].group_photo.photo_link;
-            var description = responseSports[i].description;
-            var link = responseSports[i].link;
+            var name = responseSports[randomReturn].name;
+            var photo = responseSports[randomReturn].group_photo.photo_link;
+            var description = responseSports[randomReturn].description;
+            var link = responseSports[randomReturn].link;
             console.log(responseSports);
             //need to get random results working Weds morning, code commented out
             // var randomReturn = Math.floor(Math.random(responseMeetup)*1);
@@ -90,10 +90,10 @@ $.ajax({
             }).done(function(responseSocial) {
             for(var i = 0; i < responseSocial.length; i++) {
             var thumbnail = $("<img>");
-            var name = responseSocial[i].name;
-            var photo = responseSocial[i].group_photo.photo_link;
-            var description = responseSocial[i].description;
-            var link = responseSocial[i].link;
+            var name = responseSocial[randomReturn].name;
+            var photo = responseSocial[randomReturn].group_photo.photo_link;
+            var description = responseSocial[randomReturn].description;
+            var link = responseSocial[randomReturn].link;
             console.log(responseSocial);
             //need to get random results working Weds morning, code commented out
             // var randomReturn = Math.floor(Math.random(responseMeetup)*1);
@@ -118,17 +118,19 @@ $.ajax({
         console.log(response);
         var lat = response.lat
         var lng = response.lng
-        var queryUrl = "https://api.meetup.com/find/groups?&category=11&key=2fb727dc2e2c2b62374217f5d45a&sign=true&photo-host=public&lon=" + lng + "&lat=" + lat + "&page=3"
+        var queryUrl = "https://api.meetup.com/find/groups?&category=11&key=2fb727dc2e2c2b62374217f5d45a&sign=true&photo-host=public&lon=" + lng + "&lat=" + lat + "&page=50"
             $.ajax({
             url: queryUrl,
             method: "GET"
             }).done(function(responseScifi) {
-            for(var i = 0; i < responseScifi.length; i++) {
+        
+            var randomReturn = Math.floor(Math.random()*50);
             var thumbnail = $("<img>");
-            var name = responseScifi[i].name;
-            var photo = responseScifi[i].group_photo.photo_link;
-            var description = responseScifi[i].description;
-            var link = responseScifi[i].link;
+            var name1 = responseScifi[randomReturn].name;
+            var name = name1;
+            var photo = responseScifi[randomReturn].group_photo.photo_link;
+            var description = responseScifi[randomReturn].description;
+            var link = responseScifi[randomReturn].link;
             console.log(responseScifi);
             //need to get random results working Weds morning, code commented out
             // var randomReturn = Math.floor(Math.random(responseMeetup)*1);
@@ -138,7 +140,6 @@ $.ajax({
             $("#display").html("Group Name: " + name + " " + "Description: " + description + " " + "Link: " + result);
             thumbnail.attr("src", photo);
             $("#display").prepend(thumbnail);
-        };
     }); 
 });
 } //End if statement for sci-fi
