@@ -21,6 +21,8 @@ $.ajax({
         }).done(function(responseOutdoors) {
         var randomReturn = Math.floor(Math.random()*50);                            
         var thumbnail = $("<img>");
+        var name1 = responseScifi[randomReturn].name;
+        var name = name1;
         var name = responseOutdoors[randomReturn].name;
         var photo = responseOutdoors[randomReturn].group_photo.photo_link;
         var description = responseOutdoors[randomReturn].description;
@@ -62,6 +64,8 @@ $.ajax({
             }).done(function(responseSports) {
             var randomReturn = Math.floor(Math.random()*50);                                
             var thumbnail = $("<img>");
+            var name1 = responseScifi[randomReturn].name;
+            var name = name1;
             var name = responseSports[randomReturn].name;
             var photo = responseSports[randomReturn].group_photo.photo_link;
             var description = responseSports[randomReturn].description;
@@ -105,6 +109,8 @@ $.ajax({
             var randomReturn = Math.floor(Math.random()*50);                
 
             var thumbnail = $("<img>");
+            var name1 = responseSocial[randomReturn].name;
+            var name = name1;
             var name = responseSocial[randomReturn].name;
             var photo = responseSocial[randomReturn].group_photo.photo_link;
             var description = responseSocial[randomReturn].description;
