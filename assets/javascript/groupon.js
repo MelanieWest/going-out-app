@@ -17,6 +17,7 @@ var category, city;
 if (activity == 'r'){category = 'food-and-drink';}
 if (activity == 'a'){category = 'things-to-do';}
 
+
 var zipUrl = "https://www.zipcodeapi.com/rest/AbzyNhMMyqYW0scurt7Al2yYktdJlnFWyfvmxh96H72HAfc1JkC4ma2HEgr0D6Wc/info.json/" + zip + "/degrees"
 
 $.ajax({        // this request is listed first, but it logs second (after groupon)
@@ -37,9 +38,10 @@ $.ajax({        // this request is listed first, but it logs second (after group
 
      tableDiv.html('<tr><th> </th><th> Groupon </th></tr>');
 
-  
+     var cors = "https://cors-bcs.herokuapp.com/"
+     
     $.ajax({
-    url: "https://partner-api.groupon.com/deals.json?tsToken=US_AFF_0_201236_212556_0&division_id="+city+"&filters=category:"+category+"&offset=0&limit=50",
+    url: cors +"https://partner-api.groupon.com/deals.json?tsToken=US_AFF_0_201236_212556_0&division_id="+city+"&filters=category:"+category+"&offset=0&limit=50",
     method:  "GET" 
     }).done(function(e){
 
