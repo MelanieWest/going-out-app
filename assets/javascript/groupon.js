@@ -1,26 +1,28 @@
-$(document).ready(function(){
+// $(document).ready(function(){
   
-// activity will either be 'r'(restaurant) or 'activ' (activity)
-// zip is the event zip code
-// time is 'a' (am or morning) or 'p' (pm or evening)
+// // activity will either be 'r'(restaurant) or 'activ' (activity)
+// // zip is the event zip code
+// // time is 'a' (am or morning) or 'p' (pm or evening)
 
 // 'activity' and 'zip' will be passed in;  for now they are not so I am setting default values
-
+ 
 var activity = 'activ';
 var zip = 32809;
 var tableDiv, merchLink, merchUrl, groupLink;
 var itemSel=0;
 
-//these will be determined by input
+// //these will be determined by input
 
-var category, city;
+// var category, city;
 
 if (activity == 'r'){category = 'food-and-drink';}
 if (activity == 'activ'){category = 'things-to-do';}
-if (activity == 'activ'){category = 'things-to-do';}
+if (activity == 'health'){category = 'beauty-and-spas';}
 
 
-var zipUrl = "https://www.zipcodeapi.com/rest/Kw7CrOFpJDGmp331IVUUOY7Pue98LjOwQW9hLPGutnQSqTT8PO3DMbshpCpbWeIM/info.json/" + zip + "/degrees"
+// var zipUrl = "https://www.zipcodeapi.com/rest/Kw7CrOFpJDGmp331IVUUOY7Pue98LjOwQW9hLPGutnQSqTT8PO3DMbshpCpbWeIM/info.json/" + zip + "/degrees"
+
+//zip code request is limited to 50 calls/day.  Hard code 'city' to avoid errors
 
 $.ajax({        // this request is listed first, but it logs second (after groupon)
     url: zipUrl,
@@ -30,6 +32,7 @@ $.ajax({        // this request is listed first, but it logs second (after group
     console.log(response);
     city = response.city;
 
+    //city = 'Orlando'
     console.log('city is '+city);
 
     //solve async problem by having the groupon ajax occur after zip is done
@@ -40,13 +43,13 @@ $.ajax({        // this request is listed first, but it logs second (after group
 
   
     $.ajax({
-    url: "https://partner-api.groupon.com/deals.json?tsToken=US_AFF_0_201236_212556_0&division_id="+city+"&filters=category:"+category+"&offset=0&limit=10",
-    method:  "GET"
+    url: "https://partner-api.groupon.com/deals.json?tsToken=US_AFF_0_201236_212556_0&division_id="+city+"&filters=category:"+category+"&offset=0&limit=50",
+    method:  "GET" 
     }).done(function(e){
 
-    console.log(e);
+//     console.log(e);
 
-    itemSel = Math.floor(Math.random()*10);
+    itemSel = Math.floor(Math.random()*50);
 
     //for (var i = 0; i < e.deals.length; i++){
 
