@@ -28,7 +28,7 @@ function places () {
      
       google.maps.event.addDomListener(window, 'load', initialize);
       
-      $("#display").append('<div id ="map">Google Maps</div>');
+      //$("#display").append('<div id ="map">Google Maps</div>');
       ranNum = Math.floor(Math.random()*8); //used to select a random activity
       theme = activityPlaces[ranNum];
       console.log('Random number is '+ranNum+ ', and the theme is '+theme);
