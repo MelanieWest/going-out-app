@@ -150,9 +150,9 @@ $(document).ready(function(){
     }; //End chooseAct function
 
     function restartApp () {
-        $(".restart").on("click", function () {
+        $(".reset").on("click", function () {
             activity = "restart"
-            $("#display").html("<h2 class = 'response'>");
+            $("#display").html("<div></div>");
         });
     }; //End restartApp function
 
