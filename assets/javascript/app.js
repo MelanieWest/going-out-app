@@ -130,9 +130,8 @@ $(document).ready(function(){
             console.log("You chose a random event... crazy bastard.");
             places();
         }
-        if (activity != "moose") {
-            $("#display").append("<button>Choose Another</button>");
-        }
+
+        $("#display").append("<button>Search Again</button>");
         
     } //End ajax function
 });

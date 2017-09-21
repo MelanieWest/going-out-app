@@ -57,7 +57,7 @@ $.ajax({        // this request is listed first, but it logs second (after group
   //        tableDiv.append('<tr><td>'+ e.deals[itemSel].title +'</td><td>'+ e.deals[itemSel].redemptionLocation + '</td><td>'+ merchLink + '</td></tr>' )
  
         tableDiv.append('<tr><th> Activity </th><td> '+ e.deals[itemSel].title +'</td></tr><tr><th> Price </th><td> '+ e.deals[itemSel].options[0].price.formattedAmount + '</td></tr><tr><th> Link </th><td>' + groupLink + '</td></tr>')
-        tableDiv.append('<img src ='+ e.deals[itemSel].largeImageUrl+ '/>')
+        //tableDiv.append('<img src ='+ e.deals[itemSel].largeImageUrl+ '/>')
 
         
         return tableDiv;
