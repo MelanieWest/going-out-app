@@ -135,15 +135,15 @@ $(document).ready(function(){
             places();
         }
 
-        $("#display").append("<button class = 'choose'>Accept</button>");        
-        $("#display").append("<button class = 'reset'>Search Again</button>");
+        $("#display").append("<button id = 'choose' class = 'button is-small button is-light button-font'>Accept</button>");        
+        $("#display").append("<button id = 'reset' class = 'button is-small button is-light button-font'>Search Again</button>");
         chooseAct();
         restartApp();
         
     } //End ajax function
 
     function chooseAct () {
-        $(".choose").on("click", function() {
+        $("#choose").on("click", function() {
             activity = "chosen"
             $("#display").html("<h2 class = 'response'>Good choice!");
             console.log("clicked choice button");
@@ -152,10 +152,9 @@ $(document).ready(function(){
     }; //End chooseAct function
 
     function restartApp () {
-        $(".reset").on("click", function () {
+        $("#reset").on("click", function () {
             activity = "restart"
-            $("#user-zip").css("display", "block");            
-            $("#display").html('');
+            location.reload();            
         });
     }; //End restartApp function
 

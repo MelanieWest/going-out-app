@@ -107,6 +107,14 @@ img {
     width: 300px;
 }
 
+#choose {
+    margin: 0 10px;
+}
+
+#reset {
+    margin: 0 10px;
+}
+
 #display {
     font-family: 'Titillium Web', sans-serif;
     margin-left: 15px;
