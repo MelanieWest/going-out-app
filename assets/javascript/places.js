@@ -2,8 +2,6 @@ function places () {
 
 $("#display").append('<div id ="map">This works!</div>');
 
-//assume that my input activity variable is called 'act'
-
     // for now, the only input received by this function is 'zip' (zip code) - global
   
     var map;
@@ -65,10 +63,6 @@ $("#display").append('<div id ="map">This works!</div>');
 
     }           // end of initialize function
 
-    //google.maps.event.addDomListener(window, 'load', initialize);
-    
-    
-    initialize();
     
     tableDiv = $('<table>');    //set up display div
     tableDiv.html('<tr><th> </th><th> Google Places </th></tr>');
