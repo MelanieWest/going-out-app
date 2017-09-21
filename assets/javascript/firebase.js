@@ -21,10 +21,13 @@ $(document).on("click","#existing-user", function(){
               points = (snapshot.val());
               console.log(points)
             $("#points").html("points " + points)
-            
+            authen = true;
+            $("#login-form").css("display", "none");
+            $("#user-zip").css("display", "block");
             });
         })
         .catch((error) => {
+            authen = false;
             console.log('error', error);
             alert("Invalid username/password")
         });
@@ -42,8 +45,11 @@ $(document).on("click", "#new-user", function(){
             console.log(currentUserID)
             newscore()
             $("#points").html("points" + 0)
+            authen = true;
+            alert("Success! Please sign in.");
      })
         .catch((error) => {
+            authen = false;
             console.log('error', error);
             alert("Invalid username/password")
     });

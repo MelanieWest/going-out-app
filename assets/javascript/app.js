@@ -3,6 +3,7 @@ var zip;
 var activity;
 var result;
 var counter;
+var authen;
 
 $(document).ready(function(){
 
@@ -11,12 +12,6 @@ $(document).ready(function(){
 $("#new-user").on("click", function () {
     console.log("new user button working");
     //If successful sign up, then make zip-message say "Success! Please sign in."
-})
-
-$("#existing-user").on("click", function () {
-    console.log("existing user button working");
-    $("#login-form").css("display", "none");
-    $("#user-zip").css("display", "block");
 })
 
 
