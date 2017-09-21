@@ -1,6 +1,6 @@
 function places () {
 
-$("#display").append('<div id ="map">This works!</div>');
+$("#display").append('<div id ="map">Map</div>');
 
     // for now, the only input received by this function is 'zip' (zip code) - global
   
@@ -32,20 +32,16 @@ $("#display").append('<div id ="map">This works!</div>');
         console.log(response);
         lat = response.lat;
         lng = response.lng;        
-
-        
+     
       google.maps.event.addDomListener(window, 'load', initialize);
       
-      // latitude and longitude will be variables.  Right now I have it
-      // set near I-drive to get some good results of varying types.
+      //the next line is for testing - it's an area near I-drive that has good search places
 
       //var city = new google.maps.LatLng(28.45000,-81.4700);
     
       var city = new google.maps.LatLng(lat,lng);
 
       function initialize() {
-
-      console.log("Initialize is called");
       
       map = new google.maps.Map(document.getElementById('map'), {
           center: city,
@@ -69,7 +65,6 @@ $("#display").append('<div id ="map">This works!</div>');
     
     function callback(results, status) {
       
-      console.log("the callback function totally works!");
       itemSel = Math.floor(Math.random()*results.length);
 
       if (status == google.maps.places.PlacesServiceStatus.OK) {
@@ -99,7 +94,5 @@ $("#display").append('<div id ="map">This works!</div>');
     $("#display").prepend(tableDiv); //insert table into document
     
     });   // end of zip
-
-    
+   
 }   // end of function 'places' block
-
