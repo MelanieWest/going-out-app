@@ -4,33 +4,27 @@ $("#display").append('<div id ="map">This works!</div>');
 
 //assume that my input activity variable is called 'act'
 
-//I'll need latitude and longitude data for this (bring in zip ajax?)
-// right now just use orlando date (hard-coded)
-
-    var act = 'active';   //set here for now; eventually will be input
-
+    // for now, the only input received by this function is 'zip' (zip code) - global
+  
     var map;
     var service;
     var infowindow;
     var searchRad = '1000'; //default value for search radius (it's not miles- kilometers? small area)
+    var lat, lng;
     
     var theme;        // this variable will hold the selected activity
-    var lat, lng;
     var placeLink, tableDiv;    //used for output to document
     var activityPlaces = ['aquarium','bowling_alley','night_club','amusement_park','art_gallery','movie_theater','museum','restaurant'];
     
     var ranNum  = 0;  //default ran # to select activity type
-    var itemSel = 0;  //default ran # to select random result
+    var itemSel = 0;  //default ran # to select random result (if there is one or more)
     
     ranNum = Math.floor(Math.random()*8); //used to select a random activity
-
     theme = activityPlaces[ranNum];
-   
-    
+      
     console.log('Random number is '+ranNum+ ', and the theme is '+theme);
 
-    var cors = "https://cors-bcs.herokuapp.com/"
-    
+    var cors = "https://cors-bcs.herokuapp.com/"   
     var zipUrl = cors + "https://www.zipcodeapi.com/rest/OupZPnT4uALMa6qNSjiMWbEKvcYjSbHGF7FuuzzYalKksa8ktq7qBLb7X9qQl8w0/info.json/" + zip + "/degrees"
     
     $.ajax({        // this request is listed first, but it logs second (after groupon)
@@ -42,18 +36,19 @@ $("#display").append('<div id ="map">This works!</div>');
         lng = response.lng;        
 
         
-
-    function initialize() {
       google.maps.event.addDomListener(window, 'load', initialize);
       
       // latitude and longitude will be variables.  Right now I have it
       // set near I-drive to get some good results of varying types.
 
       //var city = new google.maps.LatLng(28.45000,-81.4700);
-      console.log("Is initialize working?");
     
       var city = new google.maps.LatLng(lat,lng);
 
+      function initialize() {
+
+      console.log("Initialize is called");
+      
       map = new google.maps.Map(document.getElementById('map'), {
           center: city,
           zoom: 15      //zoom: 0 shows the whole earth.  Bigger #'s are closer
