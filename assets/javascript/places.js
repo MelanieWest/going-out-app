@@ -1,6 +1,6 @@
 function places () {
 
-$("#display").append('<div id ="map">Map</div>');
+$("#display").append('<div id ="map">Google Maps</div>');
 
     // for now, the only input received by this function is 'zip' (zip code) - global
   
@@ -70,7 +70,8 @@ $("#display").append('<div id ="map">Map</div>');
       if (results.length == 0){ 
         tableDiv.append('<p> No results found in the category: '+theme+ '</p>');
         tableDiv.append('<p> Please try again (a new category will be selected) </p> ')
-        $("#display").prepend(tableDiv); //insert table into document       
+        $("#display").prepend(tableDiv); //insert table into document
+        return       
       }
 
       if (status == google.maps.places.PlacesServiceStatus.OK) {
@@ -98,7 +99,6 @@ $("#display").append('<div id ="map">Map</div>');
       
     }           // end of callback function
   
-    
-    });   // end of zip
+  });   // end of zip
    
 }   // end of function 'places' block
