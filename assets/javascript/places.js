@@ -1,8 +1,6 @@
 function places () {
 
-$("#display").append('<div id ="map"></div>');
-
-google.maps.event.addDomListener(window, 'load', initialize);
+$("#display").append('<div id ="map">This works!</div>');
 
 //assume that my input activity variable is called 'act'
 
@@ -41,14 +39,18 @@ google.maps.event.addDomListener(window, 'load', initialize);
     }).done(function cityName(response){
         console.log(response);
         lat = response.lat;
-        lng = response.lng;
-    
-    function initialize() {
+        lng = response.lng;        
 
+        
+
+    function initialize() {
+      google.maps.event.addDomListener(window, 'load', initialize);
+      
       // latitude and longitude will be variables.  Right now I have it
       // set near I-drive to get some good results of varying types.
 
       //var city = new google.maps.LatLng(28.45000,-81.4700);
+      console.log("Is initialize working?");
     
       var city = new google.maps.LatLng(lat,lng);
 
@@ -68,21 +70,28 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
     }           // end of initialize function
 
+    //google.maps.event.addDomListener(window, 'load', initialize);
+    
+    
+    initialize();
+    
     tableDiv = $('<table>');    //set up display div
     tableDiv.html('<tr><th> </th><th> Google Places </th></tr>');
     
     function callback(results, status) {
-
+      
+      console.log("the callback function totally works!");
       itemSel = Math.floor(Math.random()*results.length);
 
       if (status == google.maps.places.PlacesServiceStatus.OK) {
-        for (var i = 0; i < results.length; i++) {
-          var place = results[i];
-          console.log(results[i]);
-
+        //for (var i = 0; i < results.length; i++) {
+          var place = results[itemSel];
+          console.log(results[itemSel]);
+          console.log("this works");
           //create a link to the website, then a table div to display results
 
           placeLink = '<a href ='+results[itemSel].dealUrl+' target = "_blank"> Groupon Link </a>'
+          console.log("placeLink = " + placeLink);
           tableDiv.append('<tr><th> Name  </th><td> '+ results[itemSel].name +'</td></tr><tr><th> Location </th><td> '+ results[itemSel].vicinity + '</td></tr>')
           tableDiv.append(results[itemSel].photos[0].html_attributions) //this is formatted as an 'a' element
   
@@ -91,15 +100,15 @@ google.maps.event.addDomListener(window, 'load', initialize);
              position: place.geometry.location
             });     //end of marker placement block
  
-        }       //end of 'for' loop that collects results
+        //}       //end of 'for' loop that collects results
       }         // end of 'if' block for places search
 
       return tableDiv;
     }           // end of callback function
-
+        
     });   // end of zip
 
-    $("#display").prepend(tableDiv); //insert table into document
+    $("#display").prepend("This works too!" + tableDiv); //insert table into document
     
 }   // end of function 'places' block
 
