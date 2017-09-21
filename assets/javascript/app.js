@@ -29,7 +29,7 @@ $(document).ready(function(){
     $("#rest").on("click", function(){
         activity = "r"
         event.preventDefault();    
-        $("#display").html("<h2 class= 'response'>Give this a taste:<br>");
+        $("#display").html("<h2 class= 'response'>Try this:<br>");
         console.log(activity);
         ajax();
 
@@ -136,6 +136,7 @@ $(document).ready(function(){
         $("#display").append("<button class = 'choose'>Accept</button>");        
         $("#display").append("<button class = 'reset'>Search Again</button>");
         chooseAct();
+        restartApp();
         
     } //End ajax function
 
@@ -144,6 +145,7 @@ $(document).ready(function(){
             activity = "chosen"
             $("#display").html("<h2 class = 'response'>Good choice!");
             console.log("clicked choice button");
+            $("#display").append('<input type="button" class="button is-small button is-light button-font" value="Add Points" id="test">');            
         });
     }; //End chooseAct function
 
@@ -151,6 +153,7 @@ $(document).ready(function(){
         $(".restart").on("click", function () {
             activity = "restart"
             $("#display").html("<h2 class = 'response'>");
-        })
-    }
+        });
+    }; //End restartApp function
+
 });
