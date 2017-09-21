@@ -3,6 +3,13 @@ function meetup () {
 //var zip = 32792;
 var zipUrl = "https://cors-bcs.herokuapp.com/https://www.zipcodeapi.com/rest/OupZPnT4uALMa6qNSjiMWbEKvcYjSbHGF7FuuzzYalKksa8ktq7qBLb7X9qQl8w0/info.json/" + zip + "/degrees"
 
+
+$.ajaxSetup({
+    "error":function() {
+        $("#display").html("<h2 class = 'response'>No results. Sorry.");
+        $("#display").append("<button class = 'reset'>Search Again</button>");
+    }
+});
 //two ajax calls - first to call the zipcode, and then to call Meetup results based on zipcode. Each call is separated by category.
 
 //FOR OUTDOORS CATEGORY 
