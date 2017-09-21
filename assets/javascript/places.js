@@ -97,8 +97,7 @@ $("#display").append('<div id ="map">Map</div>');
       $("#display").prepend(tableDiv); //insert table into document
       
     }           // end of callback function
-
-   
+  
     
     });   // end of zip
    
