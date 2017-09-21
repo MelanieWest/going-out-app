@@ -88,10 +88,11 @@ $("#display").append('<div id ="map">Map</div>');
         //}       //end of 'for' loop that collects results
       }         // end of 'if' block for places search
 
-      return tableDiv;
+      $("#display").prepend(tableDiv); //insert table into document
+      
     }           // end of callback function
 
-    $("#display").prepend(tableDiv); //insert table into document
+   
     
     });   // end of zip
    
