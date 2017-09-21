@@ -1,7 +1,5 @@
 function places () {
 
-$("#display").append('<div id ="map">Google Maps</div>');
-
     // for now, the only input received by this function is 'zip' (zip code) - global
   
     var map;
@@ -16,14 +14,9 @@ $("#display").append('<div id ="map">Google Maps</div>');
     
     var ranNum  = 0;  //default ran # to select activity type
     var itemSel = 0;  //default ran # to select random result (if there is one or more)
-    
-    ranNum = Math.floor(Math.random()*8); //used to select a random activity
-    theme = activityPlaces[ranNum];
-      
-    console.log('Random number is '+ranNum+ ', and the theme is '+theme);
-
+          
     var cors = "https://cors-bcs.herokuapp.com/"   
-    var zipUrl = cors + "https://www.zipcodeapi.com/rest/OupZPnT4uALMa6qNSjiMWbEKvcYjSbHGF7FuuzzYalKksa8ktq7qBLb7X9qQl8w0/info.json/" + zip + "/degrees"
+    var zipUrl = cors + "https://www.zipcodeapi.com/rest/AbzyNhMMyqYW0scurt7Al2yYktdJlnFWyfvmxh96H72HAfc1JkC4ma2HEgr0D6Wc/info.json/" + zip + "/degrees"
     
     $.ajax({        // this request is listed first, but it logs second (after groupon)
         url: zipUrl,
@@ -35,14 +28,20 @@ $("#display").append('<div id ="map">Google Maps</div>');
      
       google.maps.event.addDomListener(window, 'load', initialize);
       
+      $("#display").append('<div id ="map">Google Maps</div>');
+      ranNum = Math.floor(Math.random()*8); //used to select a random activity
+      theme = activityPlaces[ranNum];
+      console.log('Random number is '+ranNum+ ', and the theme is '+theme);
+      
       //the next line is for testing - it's an area near I-drive that has good search places
 
       //var city = new google.maps.LatLng(28.45000,-81.4700);
     
-      var city = new google.maps.LatLng(lat,lng);
 
       function initialize() {
-      
+
+      var city = new google.maps.LatLng(lat,lng);
+        
       map = new google.maps.Map(document.getElementById('map'), {
           center: city,
           zoom: 15      //zoom: 0 shows the whole earth.  Bigger #'s are closer
@@ -59,9 +58,10 @@ $("#display").append('<div id ="map">Google Maps</div>');
 
     }           // end of initialize function
 
+    tableDiv = $('<h4> Google Places Result: </h4>');
     
-    tableDiv = $('<table>');    //set up display div
-    tableDiv.html('<tr><th> </th><th> Google Places </th></tr>');
+    // tableDiv = $('<table>');    //set up display div
+    // tableDiv.html('<tr><th> </th><th> Google Places </th></tr>');
     
     function callback(results, status) {
       
@@ -83,7 +83,10 @@ $("#display").append('<div id ="map">Google Maps</div>');
           //placeLink = '<a href ='+results[itemSel].dealUrl+' target = "_blank"> Groupon Link </a>'
           //console.log("placeLink = " + placeLink);
 
-          tableDiv.append('<tr><th> Name  </th><td> '+ results[itemSel].name +'</td></tr><tr><th> Location </th><td> '+ results[itemSel].vicinity + '</td></tr>')
+          tableDiv.append('<p>'+results[itemSel].name+ '</p>');
+          tableDiv.append('<p>'+results[itemSel].vicinity + '</p>');
+
+          //tableDiv.append('<tr><th> Name  </th><td> '+ results[itemSel].name +'</td></tr><tr><th> Location </th><td> '+ results[itemSel].vicinity + '</td></tr>')
 
           //tableDiv.append(results[itemSel].photos[0].html_attributions) //this is formatted as an 'a' element
   
