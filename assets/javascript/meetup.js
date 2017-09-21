@@ -1,7 +1,6 @@
 function meetup () {
 //ajax call for zip code (please note this is hard-coded with a var zip value for testing purposes and this value will have to be removed)  
 //var zip = 32792;
-var tableDiv,meetupLink;
 var zipUrl = "https://cors-bcs.herokuapp.com/https://www.zipcodeapi.com/rest/OupZPnT4uALMa6qNSjiMWbEKvcYjSbHGF7FuuzzYalKksa8ktq7qBLb7X9qQl8w0/info.json/" + zip + "/degrees"
 
 //two ajax calls - first to call the zipcode, and then to call Meetup results based on zipcode. Each call is separated by category.
@@ -29,28 +28,17 @@ $.ajax({
         var link = responseOutdoors[randomReturn].link;
         console.log(responseOutdoors);
        
-        tableDiv = $('<table>');
-        tableDiv.html('<tr><th> </th><th> Meetup </th></tr>');
-
         var str = "Meetup Link";
-        var result = str.link(link); 
-       
-        // var divLink = $("<div class='meetup-link'>");
-        // $("#display").html("Group Name: " + name + " " + "Description: " + description);
-        // thumbnail.attr("src", photo);
-        // $("#display").prepend(thumbnail);
-        // $("#display").append(divLink);
-        // $(".meetup-link").html("Link: " + result);
-        // $(".meetup-link").click(function(){
-        //     window.open(link, 'window name', 'window settings');
-        //     return false;
-
-        meetupLink = '<a href ='+link+' target = "_blank"> Meetup Link </a>'
-        tableDiv.append('<tr><th> Activity </th><td> '+ name +'</td></tr><tr><th> Description </th><td> '+ description + '</td></tr><tr><th> Link </th><td>' + meetupLink + '</td></tr>')
-        tableDiv.prepend(thumbnail)
-
-        $("#display").append(tableDiv); //insert table into document
-            
+        var result = str.link(link);    
+        var divLink = $("<div class='meetup-link'>");
+        $("#display").html("Group Name: " + name + " " + "Description: " + description);
+        thumbnail.attr("src", photo);
+        $("#display").prepend(thumbnail);
+        $("#display").append(divLink);
+        $(".meetup-link").html("Link: " + result);
+        $(".meetup-link").click(function(){
+            window.open(link, 'window name', 'window settings');
+            return false;           
         });
     
     }); 
