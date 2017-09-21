@@ -14,7 +14,7 @@ $.ajax({
     console.log(response);
     var lat = response.lat
     var lng = response.lng
-    var queryUrl = "https://cors-bcs.herokuapp.com/https://api.meetup.com/find/groups?&category=23&key=2fb727dc2e2c2b62374217f5d45a&sign=true&photo-host=public&lon=" + lng + "&lat=" + lat + "&page=3"
+    var queryUrl = "https://cors-bcs.herokuapp.com/https://api.meetup.com/find/groups?&category=23&key=2fb727dc2e2c2b62374217f5d45a&sign=true&photo-host=public&lon=" + lng + "&lat=" + lat + "&page=50"
         $.ajax({
         url: queryUrl,
         method: "GET"
@@ -31,6 +31,9 @@ $.ajax({
         var str = "Meetup Link";
         var result = str.link(link);    
         var divLink = $("<div class='meetup-link'>");
+        // $("#display").attr('class', 'meetup-title');
+        // var meetupText = $("<div class='meetup-title'>");
+        // meetupText.html("Group Name: " + name + " " + "Description: " + description);
         $("#display").html("Group Name: " + name + " " + "Description: " + description);
         thumbnail.attr("src", photo);
         $("#display").prepend(thumbnail);
@@ -40,7 +43,7 @@ $.ajax({
             window.open(link, 'window name', 'window settings');
             return false;           
         });
-    
+        
     }); 
 });
 } //End if statement for outdoors

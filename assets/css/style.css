@@ -88,7 +88,6 @@ th {
     font-weight: bold;
     margin-right: 40px;
     margin-left: 40px;
-    padding: 10px;
 }
 
 #message {
@@ -101,6 +100,20 @@ th {
 }
 
 img {
-    border: 2px, solid, black;
-    margin: 20px;
+    margin-top: 40px;
+    padding: 15px;
+}
+
+#display {
+    font-family: 'Titillium Web', sans-serif;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.meetup-title {
+    font-weight: bold;
+}
+
+.meetup-link {
+    font-weight: bold;
 }
