@@ -70,8 +70,7 @@ $("#display").append('<div id ="map">Map</div>');
       if (results.length == 0){ 
         tableDiv.append('<p> No results found in the category: '+theme+ '</p>');
         tableDiv.append('<p> Please try again (a new category will be selected) </p> ')
-        $("#display").prepend(tableDiv); //insert table into document
-        return        
+        $("#display").prepend(tableDiv); //insert table into document       
       }
 
       if (status == google.maps.places.PlacesServiceStatus.OK) {
