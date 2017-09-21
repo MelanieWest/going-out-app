@@ -9,7 +9,7 @@ h2 {
     margin: 35px;
 }
 
-#user-time, #user-activity, #user-category {
+#user-zip, #user-activity, #user-category {
     display: none;
 }
 

@@ -6,6 +6,8 @@ var counter;
 
 $(document).ready(function(){
 
+//Login Input
+
 //Zip Code Input
 
     $("#zip-button").on("click", function(){
