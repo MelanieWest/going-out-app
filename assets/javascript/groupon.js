@@ -7,7 +7,7 @@ function groupon () {
 // 'activity' and 'zip' will be passed in;  for now they are not so I am setting default values
 
 //var zip = 32809;
-var tableDiv, merchLink, merchUrl; //groupLink;
+var tableDiv, merchLink, merchUrl, groupLink;
 var itemSel=0;
 
 // //these will be determined by input
@@ -24,7 +24,7 @@ var zipUrl = cors + "https://www.zipcodeapi.com/rest/" + key + "/info.json/" + z
 $.ajaxSetup({
     "error":function() {
         $("#display").html("<h2 class = 'response'>No results. Sorry.");
-        $("#display").append("<button>Search Again</button>");
+        $("#display").append("<button class = 'reset'>Search Again</button>");
     }
 });
 
