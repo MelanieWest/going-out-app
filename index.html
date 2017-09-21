@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.css"/>
-    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Righteous|Kameron|Titillium+Web" rel="stylesheet">
     <link rel = "stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel = "stylesheet" type="text/css" href="assets/css/style.css">  
     <!-- Compressed CSS -->     
@@ -19,78 +19,85 @@
         <div class="container">
         <div class="container has-text-centered">
             <h1 class="title">Going Out</h1>
-            <h2 class="subtitle">Take a chance. Have fun. Earn points. <div class="container has-text-centered"></h2>
+            <h2 class="subtitle" id="hero-text">Have fun. Earn points. <div class="container has-text-centered"></h2>
         </div>
         </div>
     </section>   
         <div class="columns is-mobile is-centered">
             <div id="display">
-                <br>
-                <div id="content">
-                  
-                <!--User Enters Zip Code Here-->
+            <br>
+            <div id="content">
+            <!--User Enters Zip Code Here-->
+            <form id="user-zip">
+                <label for="zip-input"><p id="zip-text">Enter your zip code:</p></label>
+                <input type="number" class="input is-primary input is-large"  id="zip-input"><br>
+                <input class="button is-small button is-light" id="zip-button" type="submit" value="Enter">
+            </form>
+            <!--User Selects Activity Here-->
+            <form id="user-activity">
+            <label for="rest"><p>So what do you want to do?</p></label>
+                <input id="rest" type="submit" value="Restaurant">
+                <input id="act" type="submit" value="Activity">
+                <input id="meet" type="submit" value="MeetUp">      
+                <input id="places" type="submit" value="I'm Feeling Lucky">
+            </form>
         
-                    <form id="user-zip">
-                        <label for="zip-input"><p>Enter your zip code</p></label>
-                        <input type="number" class="input is-primary input is-medium"  id="zip-input"><br>
-                        <input id="zip-button" type="submit" value="Enter">
-                    </form>
+            <form id="user-category">
+                <label for="rest"><p>Sweet. What, exactly, are you looking for?</p></label>
+                <input id="outdoors" type="submit" value="Outdoors/Adventure">
+                <input id="sports" type="submit" value="Sports/Fitness">
+                <input id="social" type="submit" value="Social">
+                <input id="gaming" type="submit" value="Gaming">            
+            </form>
         
-                    <!--User Selects Activity Here-->
+            <!--User Selects Time Here : REMOVED UNLESS TIME VARIABLE USED LATER
         
-                    <form id="user-activity">
-                        <label for="rest"><p>So what do you want to do?</p></label>
-                        <input id="rest" type="submit" value="Restaurant">
-                        <input id="act" type="submit" value="Activity">
-                        <input id="meet" type="submit" value="MeetUp">      
-                        <input id="places" type="submit" value="I'm Feeling Lucky">
-                    </form>
-        
-                    <form id="user-category">
-                        <label for="rest"><p>Sweet. What, exactly, are you looking for?</p></label>
-                        <input id="outdoors" type="submit" value="Outdoors/Adventure">
-                        <input id="sports" type="submit" value="Sports/Fitness">
-                        <input id="social" type="submit" value="Social">
-                        <input id="gaming" type="submit" value="Gaming">            
-                    </form>
-        
-                        <!--User Selects Time Here : REMOVED UNLESS TIME VARIABLE USED LATER
-        
-                    <form id="user-time">
-                        <label for="zip-input"><p>What time do you want to go out?</p></label>
-                        <input id="am" type="submit" value="Morning">
-                        <input id="pm" type="submit" value="Evening">            
-                    </form>
-                    -->
-                </div>
+            <form id="user-time">
+                <label for="zip-input"><p>What time do you want to go out?</p></label>
+                <input id="am" type="submit" value="Morning">
+                <input id="pm" type="submit" value="Evening">            
+            </form>
+            -->
+        </div>
                 <!--this div holds all of the login form-->
-                <div id="login-form">
-                    <form class="control has-icons-left">
-                        <input class="input is-primary input is-medium" type="email" placeholder="Email">
-                        <span class="icon is-small is-left">
-                          <i class="fa fa-envelope"></i>
-                        </span>
-                            <br>
-                            Password:<br>
-                            <input type="password" id="password">
-                            <br><br>
-                            <input type="button" value="Login" id="existing-user">
-                            <input type="button" value="Sign up" id="new-user">
-                  </form> 
+        <div id="login-form">
+            <form class="control has-icons-left" id="email-form">
+                <input class="input is-primary input is-small" id="email" type="email" placeholder="Email">
+                    <span class="icon is-small is-left">
+                    <i class="fa fa-envelope"></i>
+                    </span>
+            </form>
+
+            <form class="control has-icons-left">
+                <input class="input is-primary input is-small" type="password" placeholder="Password">
+                    <span class="icon is-small is-left">
+                    <i class="fa fa-key"></i>
+                    </span>
+                <div id="log-sign">
+                    <input type="button" class="button is-small button is-light button-font" value="Login" id="existing-user">
+                    <input type="button" class="button is-small button is-light button-font" value="Sign up" id="new-user">
                 </div>
-                <div>
-                <!--button to add points, dont know where this should be -->
-                <input type="button" value="Add Points" id="test">
-                </div>
-                <!--Total user points will be displayed here--> 
-                <div id = "points"></div>
-            </div>
+            </form>
         </div>
+        <div>
+        <!--button to add points, dont know where this should be -->
+            <input type="button" class="button is-small button is-light button-font" value="Add Points" id="test">
         </div>
-      </div>
-    <!--Add input form-->
-          
-   
+        <!--Total user points will be displayed here--> 
+         <div id="points"></div>
+        </div>
+    </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+          <div class="content has-text-centered">
+            <p>2017</p>
+            <p>Tara Nelson, Julia McGee, Melanie West, Tyler Wilson</p>
+          </div>
+        </div>
+    </footer>
+    </div>
+    <!--Add input form-->        
 </body>
 </html>
 

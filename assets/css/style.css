@@ -13,5 +13,43 @@ h2 {
 
 .title {
     font-family: 'Righteous', cursive;
-    font-size: 30pt;
+    font-size: 35pt;
+}
+
+#email-form {
+    margin-bottom: 20px;
+}
+
+#hero-text, p, .button-font  {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+#user-zip {
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+#zip-button {
+    margin-top: 6px;
+}
+
+#zip-text {
+    margin-bottom: 6px;
+    font-size: 26pt;
+}
+
+#login-form {
+    margin-top: 50px;
+}
+
+#log-sign {
+margin-top: 6px;
+}
+
+#test {
+    margin-top: 15px;
+    }
+
+.footer {
+    font-size: 10pt;
 }
