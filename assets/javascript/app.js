@@ -3,7 +3,6 @@ var zip;
 var activity;
 var result;
 var counter;
-var groupLink = 0;
 
 $(document).ready(function(){
 
@@ -131,7 +130,7 @@ $(document).ready(function(){
             places();
         }
 
-        $("#display").append("<button>Search Again</button>");
+        $("#display").append("<button class = 'reset'>Search Again</button>");
         
     } //End ajax function
 });
