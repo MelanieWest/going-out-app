@@ -53,8 +53,10 @@ $(document).ready(function(){
         ajax();
     });
 
+//Feeling Lucky Selection
     
     $("#places").on("click", function(){
+        activity = "p"
         event.preventDefault();    
         $("#display").html("<h2>Here you go:<br>");             
         ajax();
@@ -121,6 +123,10 @@ $(document).ready(function(){
         if (activity == "mg") {
             console.log("You chose a sports meetup!");
             meetup();
+        }
+        if (activity == "p") {
+            console.log("You chose a random event... crazy bastard.");
+            places();
         }
     } //End ajax function
 });
