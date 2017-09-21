@@ -32,6 +32,7 @@ $(document).ready(function(){
         $("#display").html("<h2 class= 'response'>Give this a taste:<br>");
         console.log(activity);
         ajax();
+
     });
 
 //Activity Selection
@@ -84,7 +85,7 @@ $(document).ready(function(){
     $("#social").on("click", function(){
         activity = "mso"
         event.preventDefault();    
-        $("#display").html("<h2 class = 'response'>Check this out: " + result);
+        $("#display").html("<h2 class = 'response'>Check this out: ");
         console.log(activity);
         ajax();
     });
@@ -92,10 +93,12 @@ $(document).ready(function(){
     $("#gaming").on("click", function(){
         activity = "mg"
         event.preventDefault();    
-        $("#display").html("<h2 class = 'response'>Check this out: " + result);
+        $("#display").html("<h2 class = 'response'>Check this out: ");
         console.log(activity);
         ajax();
     });
+
+   
 
 //Results depending on user choice 
 
@@ -130,7 +133,24 @@ $(document).ready(function(){
             places();
         }
 
+        $("#display").append("<button class = 'choose'>Accept</button>");        
         $("#display").append("<button class = 'reset'>Search Again</button>");
+        chooseAct();
         
     } //End ajax function
+
+    function chooseAct () {
+        $(".choose").on("click", function() {
+            activity = "chosen"
+            $("#display").html("<h2 class = 'response'>Good choice!");
+            console.log("clicked choice button");
+        });
+    }; //End chooseAct function
+
+    function restartApp () {
+        $(".restart").on("click", function () {
+            activity = "restart"
+            $("#display").html("<h2 class = 'response'>");
+        })
+    }
 });
