@@ -2,6 +2,8 @@ var time;
 var zip;
 var activity;
 var result;
+var counter;
+var groupLink = 0;
 
 $(document).ready(function(){
 
@@ -18,7 +20,7 @@ $(document).ready(function(){
             $("#user-activity").css("display", "block");
         } else {
             $("#user-zip").append("<div id = 'message'>")
-            $("#message").html("<br><br><h2>No can do. We need a five-digit zip code.");
+            $("#message").html("<br><br><h2 class= 'response'>No can do. We need a five-digit zip code.");
         }
         
     });
@@ -28,7 +30,7 @@ $(document).ready(function(){
     $("#rest").on("click", function(){
         activity = "r"
         event.preventDefault();    
-        $("#display").html("<h2>Give this a taste:<br>");
+        $("#display").html("<h2 class= 'response'>Give this a taste:<br>");
         console.log(activity);
         ajax();
     });
@@ -38,7 +40,7 @@ $(document).ready(function(){
     $("#act").on("click", function(){
         activity = "a"
         event.preventDefault();    
-        $("#display").html("<h2>Give this a go:<br>");
+        $("#display").html("<h2 class = 'response'>Give this a go:<br>");
         console.log(activity);
         ajax();
     });
@@ -58,7 +60,7 @@ $(document).ready(function(){
     $("#places").on("click", function(){
         activity = "p"
         event.preventDefault();    
-        $("#display").html("<h2>Here you go:<br>");             
+        $("#display").html("<h2 class = 'response'>Here you go:<br>");             
         ajax();
     });
 
@@ -67,7 +69,7 @@ $(document).ready(function(){
     $("#outdoors").on("click", function(){
         activity = "mo"
         event.preventDefault();    
-        $("#display").html("<h2>Check this out: ");
+        $("#display").html("<h2 class= 'response'>Check this out: ");
         console.log(activity);
         ajax();
     });
@@ -75,7 +77,7 @@ $(document).ready(function(){
     $("#sports").on("click", function(){
         activity = "msp"
         event.preventDefault();    
-        $("#display").html("<h2>Check this out: ");
+        $("#display").html("<h2 class = 'response'>Check this out: ");
         console.log(activity);
         ajax();
     });
@@ -83,7 +85,7 @@ $(document).ready(function(){
     $("#social").on("click", function(){
         activity = "mso"
         event.preventDefault();    
-        $("#display").html("<h2>Check this out: " + result);
+        $("#display").html("<h2 class = 'response'>Check this out: " + result);
         console.log(activity);
         ajax();
     });
@@ -91,18 +93,18 @@ $(document).ready(function(){
     $("#gaming").on("click", function(){
         activity = "mg"
         event.preventDefault();    
-        $("#display").html("<h2>Check this out: " + result);
+        $("#display").html("<h2 class = 'response'>Check this out: " + result);
         console.log(activity);
         ajax();
     });
 
-//Conditions for 
+//Results depending on user choice 
+
 
     function ajax (){
         if (activity == "r") {
             console.log("You chose a restaurant!");
-            groupon();        
-
+            groupon();   
             }
         if (activity == "a") {
             console.log("You chose an activity!");
@@ -128,5 +130,9 @@ $(document).ready(function(){
             console.log("You chose a random event... crazy bastard.");
             places();
         }
+        if (activity != "moose") {
+            $("#display").append("<button>Choose Another</button>");
+        }
+        
     } //End ajax function
 });

@@ -5,6 +5,8 @@ h1 {
 
 h2 {
     font-size: 30px;
+    font-family: 'Titillium Web', sans-serif;
+    margin: 35px;
 }
 
 #user-time, #user-activity, #user-category {
@@ -60,7 +62,45 @@ margin-top: 6px;
     font-weight: bold;
 }
 
-#user-activity {
-    margin-top: 30px;
+#user-activity, #user-category {
+    margin-top: 40px;
     font-size: 26px;
+    text-align: center;
+}
+
+#rest {
+margin-top: 15px;
+}
+
+#category-text {
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+table {
+    margin-top: 20px;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 12pt;
+}
+
+th {
+    font-weight: bold;
+    margin-right: 40px;
+    margin-left: 40px;
+    padding: 10px;
+}
+
+#message {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 16pt;
+    margin-left: 15px;
+    margin-right: 15px;
+    color: red;
+    text-align: center;
+}
+
+img {
+    border: 2px, solid, black;
+    margin: 20px;
 }
