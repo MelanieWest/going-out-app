@@ -17,57 +17,61 @@
     <section class="hero is-primary">
         <div class="hero-body">
         <div class="container">
-        <div class="container has-text-centered">
-            <h1 class="title">Going Out</h1>
-            <h2 class="subtitle" id="hero-text">Have fun. Earn points. <div class="container has-text-centered"></h2>
-        </div>
+            <div class="container has-text-centered">
+                <h1 class="title">Going Out</h1>
+                <h2 class="subtitle" id="hero-text">Have fun. Earn points. <div class="container has-text-centered"></h2>
+            </div>
         </div>
     </section>   
         <div class="columns is-mobile is-centered">
             <div id="display">
             <br>
             <div id="content">
+
             <!--User Enters Zip Code Here-->
             <form id="user-zip">
                 <label for="zip-input"><p id="zip-text">Enter your zip code:</p></label>
                 <input type="number" class="input is-primary input is-large"  id="zip-input"><br>
                 <input class="button is-small button is-light" id="zip-button" type="submit" value="Enter">
             </form>
+
             <!--User Selects Activity Here-->
             <div class="columns is-mobile is-centered">
-            <form id="user-activity">
-            <label for="rest"><p>So what do you want to do?</p></label>
-            <div class="column is-centered">
-                <input id="rest" class="button is-dark is-medium is-centered" type="submit" value="Restaurant">
+                <form id="user-activity">
+                <label for="rest"><p>So what do you want to do?</p></label>
+                <div class="column is-centered">
+                    <input id="rest" class="button is-dark is-medium is-centered" type="submit" value="Restaurant">
                 </div>
                 <div class="column is-centered">
-                <input id="act" class="button is-dark is-medium is-centered" type="submit" value="Activity">
+                    <input id="act" class="button is-dark is-medium is-centered" type="submit" value="Activity">
                 </div>
                 <div class="column is-centered">
-                <input id="meet" class="button is-dark is-medium is-centered" type="submit" value="MeetUp">   
+                    <input id="meet" class="button is-dark is-medium is-centered" type="submit" value="MeetUp">   
                 </div>
                 <div class="column is-centered">
-                <input id="places" class="button is-dark is-medium is-centered" type="submit" value="I'm Feeling Lucky">
+                    <input id="places" class="button is-dark is-medium is-centered" type="submit" value="I'm Feeling Lucky">
                 </div>
-            </form>
+                </form>
             </div>
+
+            <!--User presented with meetup options-->
 
             <div class="columns is-mobile is-centered">
             <form id="user-category">
-                    <div class="column is-centered">
-                <label for="rest"></label><p id="category-text">Sweet. What are you looking for?</p></label>
+                <div class="column is-centered">
+                    <label for="rest"><p id="category-text">Sweet. What are you looking for?</p></label>
                 </div>
                 <div class="column is-centered">
-                <input id="outdoors" class="button is-dark is-medium is-centered" type="submit" value="Outdoors/Adventure">
+                    <input id="outdoors" class="button is-dark is-medium is-centered" type="submit" value="Outdoors/Adventure">
                 </div>
                 <div class="column is-centered">
-                <input id="sports" class="button is-dark is-medium is-centered" type="submit" value="Sports/Fitness">
+                    <input id="sports" class="button is-dark is-medium is-centered" type="submit" value="Sports/Fitness">
                 </div>
                 <div class="column is-centered">
-                <input id="social" class="button is-dark is-medium is-centered" type="submit" value="Social">
+                    <input id="social" class="button is-dark is-medium is-centered" type="submit" value="Social">
                 </div>
                 <div class="column is-centered">
-                <input id="gaming" class="button is-dark is-medium is-centered" type="submit" value="Gaming">        
+                    <input id="gaming" class="button is-dark is-medium is-centered" type="submit" value="Gaming">        
                 </div>    
             </form>
         </div>
@@ -81,6 +85,7 @@
             </form>
             -->
         </div>
+
                 <!--this div holds all of the login form-->
         <div id="login-form">
             <form class="control has-icons-left" id="email-form">
@@ -101,13 +106,15 @@
                 </div>
             </form>
         </div>
+
         <div>
         <!--button to add points, dont know where this should be -->
         <!--<input type="button" class="button is-small button is-light button-font" value="Add Points" id="test">-->
         </div>
         <!--Total user points will be displayed here--> 
-         <div id="points"></div>
-        </div>
+         <!--<div id="points"></div>-->
+         
+        </div> <!--End DISPLAY div-->
     </div>
     </div>
     <footer class="footer">
