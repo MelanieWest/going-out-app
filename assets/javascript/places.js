@@ -76,13 +76,14 @@ $("#display").append('<div id ="map">This works!</div>');
         //for (var i = 0; i < results.length; i++) {
           var place = results[itemSel];
           console.log(results[itemSel]);
+          console.log(results[itemSel].name, results[itemSel].vicinity);
           console.log("this works");
           //create a link to the website, then a table div to display results
 
-          placeLink = '<a href ='+results[itemSel].dealUrl+' target = "_blank"> Groupon Link </a>'
+          //placeLink = '<a href ='+results[itemSel].dealUrl+' target = "_blank"> Groupon Link </a>'
           console.log("placeLink = " + placeLink);
           tableDiv.append('<tr><th> Name  </th><td> '+ results[itemSel].name +'</td></tr><tr><th> Location </th><td> '+ results[itemSel].vicinity + '</td></tr>')
-          tableDiv.append(results[itemSel].photos[0].html_attributions) //this is formatted as an 'a' element
+          //tableDiv.append(results[itemSel].photos[0].html_attributions) //this is formatted as an 'a' element
   
           var marker = new google.maps.Marker({
              map: map,
