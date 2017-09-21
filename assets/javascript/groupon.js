@@ -7,7 +7,7 @@ function groupon () {
 // 'activity' and 'zip' will be passed in;  for now they are not so I am setting default values
 
 //var zip = 32809;
-var tableDiv, merchLink, merchUrl; //groupLink;
+var tableDiv, merchLink, merchUrl, groupLink;
 var itemSel=0;
 
 // //these will be determined by input
@@ -20,6 +20,13 @@ if (activity == 'a'){category = 'things-to-do';}
 var cors = "https://cors-bcs.herokuapp.com/"
 var key = "aTAOse3m49vEl8UQn4aVSqllg74XmXlxRVmj9pFezbSUjNLGRWCJmX4C49Ar7VYY"
 var zipUrl = cors + "https://www.zipcodeapi.com/rest/" + key + "/info.json/" + zip + "/degrees"
+
+$.ajaxSetup({
+    "error":function() {
+        $("#display").html("<h2 class = 'response'>No results. Sorry.");
+        $("#display").append("<button class = 'reset'>Search Again</button>");
+    }
+});
 
 $.ajax({        // this request is listed first, but it logs second (after groupon)
     url: zipUrl,
@@ -38,7 +45,7 @@ $.ajax({        // this request is listed first, but it logs second (after group
     //    tableDiv.html('<tr><th> Activity </th><th> Location </th><th> Link </th> </tr>');
 
      tableDiv.html('<tr><th> </th><th> Groupon </th></tr>');
-     
+
     $.ajax({
     url: cors +"https://partner-api.groupon.com/deals.json?tsToken=US_AFF_0_201236_212556_0&division_id="+city+"&filters=category:"+category+"&offset=0&limit=50",
     method:  "GET" 
@@ -49,7 +56,7 @@ $.ajax({        // this request is listed first, but it logs second (after group
     itemSel = Math.floor(Math.random()*50);
 
         // groupon doesn't show addresses.  Instead, provide the groupon url in a link
-
+       
         groupLink = '<a href ='+e.deals[itemSel].dealUrl+' target = "_blank"> Groupon Link </a>'
         console.log(groupLink.length);
        
