@@ -7,13 +7,6 @@ var authen;
 
 $(document).ready(function(){
 
-//Login Input
-
-$("#new-user").on("click", function () {
-    console.log("new user button working");
-    //If successful sign up, then make zip-message say "Success! Please sign in."
-})
-
 
 //Zip Code Input
 
@@ -161,7 +154,8 @@ $("#new-user").on("click", function () {
     function restartApp () {
         $(".reset").on("click", function () {
             activity = "restart"
-            $("#display").html("<div></div>");
+            $("#user-zip").css("display", "block");            
+            $("#display").html('');
         });
     }; //End restartApp function
 
