@@ -67,6 +67,13 @@ $("#display").append('<div id ="map">Map</div>');
       
       itemSel = Math.floor(Math.random()*results.length);
 
+      if (results.length == 0){ 
+        tableDiv.append('<p> No results found in the category: '+theme+ '</p>');
+        tableDiv.append('<p> Please try again (a new category will be selected) </p> ')
+        $("#display").prepend(tableDiv); //insert table into document
+        return        
+      }
+
       if (status == google.maps.places.PlacesServiceStatus.OK) {
         //for (var i = 0; i < results.length; i++) {
           var place = results[itemSel];
