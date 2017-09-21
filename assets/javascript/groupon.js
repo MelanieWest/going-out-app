@@ -39,6 +39,12 @@ $.ajax({        // this request is listed first, but it logs second (after group
 
      tableDiv.html('<tr><th> </th><th> Groupon </th></tr>');
      
+    $.ajaxSetup({
+        "error":function() {
+            $("#display").html("<h2 class = 'response'>No results for that search. Sorry.");
+        }
+    });
+
     $.ajax({
     url: cors +"https://partner-api.groupon.com/deals.json?tsToken=US_AFF_0_201236_212556_0&division_id="+city+"&filters=category:"+category+"&offset=0&limit=50",
     method:  "GET" 
@@ -49,7 +55,7 @@ $.ajax({        // this request is listed first, but it logs second (after group
     itemSel = Math.floor(Math.random()*50);
 
         // groupon doesn't show addresses.  Instead, provide the groupon url in a link
-
+       
         groupLink = '<a href ='+e.deals[itemSel].dealUrl+' target = "_blank"> Groupon Link </a>'
         console.log(groupLink.length);
        
