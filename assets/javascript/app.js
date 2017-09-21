@@ -145,7 +145,7 @@ $(document).ready(function(){
             activity = "chosen"
             $("#display").html("<h2 class = 'response'>Good choice!");
             console.log("clicked choice button");
-            $("#display").append('<input type="button" class="button is-small button is-light button-font" value="Add Points" id="test">');            
+            $("#display").append('<input type="button" class="button is-small button is-light button-font" value="Attended Event" id="test"><br><div id="points"></div>');            
         });
     }; //End chooseAct function
 
