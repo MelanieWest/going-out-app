@@ -21,6 +21,13 @@ var cors = "https://cors-bcs.herokuapp.com/"
 var key = "aTAOse3m49vEl8UQn4aVSqllg74XmXlxRVmj9pFezbSUjNLGRWCJmX4C49Ar7VYY"
 var zipUrl = cors + "https://www.zipcodeapi.com/rest/" + key + "/info.json/" + zip + "/degrees"
 
+$.ajaxSetup({
+    "error":function() {
+        $("#display").html("<h2 class = 'response'>No results. Sorry.");
+        $("#display").append("<button>Search Again</button>");
+    }
+});
+
 $.ajax({        // this request is listed first, but it logs second (after groupon)
     url: zipUrl,
     method:  "GET",
@@ -38,12 +45,6 @@ $.ajax({        // this request is listed first, but it logs second (after group
     //    tableDiv.html('<tr><th> Activity </th><th> Location </th><th> Link </th> </tr>');
 
      tableDiv.html('<tr><th> </th><th> Groupon </th></tr>');
-     
-    $.ajaxSetup({
-        "error":function() {
-            $("#display").html("<h2 class = 'response'>No results for that search. Sorry.");
-        }
-    });
 
     $.ajax({
     url: cors +"https://partner-api.groupon.com/deals.json?tsToken=US_AFF_0_201236_212556_0&division_id="+city+"&filters=category:"+category+"&offset=0&limit=50",
