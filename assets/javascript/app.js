@@ -51,8 +51,8 @@ $(document).ready(function(){
 
     $("#meet").on("click", function(){
         event.preventDefault();    
-        $("#user-activity").css("display", "none");                
-        $("#user-category").css("display", "block");
+        //$("#user-activity").css("display", "none");                
+        //$("#user-category").css("display", "block");
         console.log(activity);
         ajax();
     });

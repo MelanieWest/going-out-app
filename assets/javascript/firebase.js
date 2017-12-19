@@ -2,6 +2,11 @@ var points = 0
 var currentUserID = "na"
 $(document).ready(function(){
 
+// I pulled the following line of code out of the authentication block.  It enables
+// the program to run without logging in.
+
+$("#user-zip").css("display", "block");     //disable authentication until I can learn firebase
+
 $(document).on("click","#existing-user", function(){
     event.preventDefault();
     const email = $("#email").val();
